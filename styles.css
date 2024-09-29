@@ -2,54 +2,149 @@
 
 h2 {
   font-size: 2rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Karla";
   color: white;
 }
 
 p {
   font-size: 1rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Karla";
   color: white;
   text-align: left;
 }
 
 h1 {
   font-size: 4rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Fraunces";
   color: white;
 }
 
 body {
-  background-color: #2b4e50;
+  /* overflow: hidden; */
   /* padding-top: 3rem; */
+  background-color: #1c3334;
   margin: 0;
+  height: 100vh;
   /* remove this margin if it is in nor alize. but this is to avoid the jupmp */
+}
+
+/* portfolio logo load */
+
+/* .overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 999; 
+} */
+
+.logo-container {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center */
+  animation: spin 3s ease-in-out forwards, moveToTopLeft 2s ease forwards 2s; /* Spin and then move */
+}
+
+.logo {
+  width: 100px; /* Adjust size as needed */
+  animation: scaleUp 3s ease-in-out forwards, scaleDown 3s ease forwards 2s;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes moveToTopLeft {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    top: 20px; /* Adjust to your desired top position */
+    left: 20px; /* Adjust to your desired left position */
+    transform: translate(0, 0) rotate(360deg); /* Final position */
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  100% {
+    transform: scale(6); /* Scale up to 1.5 times */
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.5); /* Start from the scaled-up size */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
 }
 
 /* mobile nav */
 
 .mobile-bottom-nav {
+  display: flex;
   position: fixed;
+  justify-content: space-around;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-
   will-change: transform;
   transform: translateZ(0);
-
-  display: flex;
-
-  height: 50px;
-
+  height: 10rem;
   box-shadow: 0 -2px 5px -2px #333;
-  background-color: #fff;
+  background-color: black;
+  color: white;
+
+  .home-icon {
+    width: 6rem;
+    height: auto;
+    filter: brightness(0) invert(1);
+    margin: 1rem;
+  }
+
+  .portfolio-icon {
+    width: 6rem;
+    height: auto;
+    filter: brightness(0) invert(1);
+    margin: 1rem;
+  }
+
+  .about-icon {
+    width: 6rem;
+    height: auto;
+    filter: brightness(0) invert(1);
+    margin: 1rem;
+  }
+
+  .contact-icon {
+    width: 6rem;
+    height: auto;
+    filter: brightness(0) invert(1);
+    margin: 1rem;
+  }
 
   &__item {
     flex-grow: 1;
     text-align: center;
     font-size: 12px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,6 +166,20 @@ body {
 
 /* main div, with 2 sections inside of it */
 
+/* title fonts*/
+
+.firstname {
+  font-family: "Faunces";
+  font-size: 5rem;
+  color: white;
+}
+
+.lastname {
+  font-family: "faunces";
+  font-size: 5rem;
+  color: white;
+}
+
 .left {
   position: sticky;
   top: 0;
@@ -82,9 +191,13 @@ body {
 .right {
   position: relative;
   width: 100%;
-  background-color: blue;
-  padding: 1rem;
+  /* background-color: white; */
+  /* padding: 1rem; */
   height: 100vh;
+}
+
+.right img {
+  top: 0;
 }
 
 .site {
@@ -96,7 +209,7 @@ body {
   }
 } */
 
-/* navbar  */
+/* desktop navbar  */
 
 .navbar {
   background-color: #1c3334;
@@ -150,4 +263,63 @@ body {
   width: 100%; */
 
   /* at media dispay glex  */
+}
+
+/* project image container hover and style for desktop */
+
+.container {
+  position: relative;
+  width: 80%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  padding: 2rem;
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #376e6f;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+/* project image section */
+
+.project-one {
+  background-color: #475353;
+  width: 100%;
+}
+
+.projects-background {
+  background-image: url("images/colour-gradient.jpg");
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Center the image */
+  padding: 20px; /* Add padding if necessary */
+  color: white; /* Change text color for visibility */
+  height: 100vh;
 }

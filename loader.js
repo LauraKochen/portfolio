@@ -1,9 +1,9 @@
-var navItems = document.querySelectorAll(".mobile-bottom-nav__item");
-navItems.forEach(function (e, i) {
-  e.addEventListener("click", function (e) {
-    navItems.forEach(function (e2, i2) {
-      e2.classList.remove("mobile-bottom-nav__item--active");
-    });
-    this.classList.add("mobile-bottom-nav__item--active");
-  });
-});
+window.onload = function () {
+  const overlay = document.querySelector(".overlay");
+  const content = document.querySelector(".content");
+
+  setTimeout(() => {
+    overlay.style.display = "none"; // Hide the overlay
+    content.style.visibility = "visible"; // Show the content
+  }, 5000); // Adjust timing as needed (3s for spin + 2s for move)
+};

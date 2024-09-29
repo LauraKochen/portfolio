@@ -4,55 +4,92 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="normalize-fwd.css" />
-    <script src="script.js"></script>
+    <script src="loader.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <main class="site">
 
+<!-- loader -->
+ 
+<!-- <div class="overlay"></div> 
+  <div class="logo-container">
+    <img src="images/light-grey-logo-new.png" alt="portfolio logo in grey" class="logo">
+  </div> -->
+
+    <main class="content">
       <!-- mobile nav -->
 
       <nav class="mobile-bottom-nav">
         <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
           <div class="mobile-bottom-nav__item-content">
-            <i class="material-icons">home</i>
-            one
-          </div>		
-        </div>
-        <div class="mobile-bottom-nav__item">		
-          <div class="mobile-bottom-nav__item-content">
-            <i class="material-icons">mail</i>
-            two
+            <a href="your-link-here">
+              <img src="images/home-icon.png" alt="Home Icon" class="home-icon">
+            </a>
           </div>
         </div>
         <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
-            <i class="material-icons">person</i>
-            three
-          </div>		
+            <a href="your-link-here">
+              <img src="images/portfolio.png" alt="Portfolio Icon" class="portfolio-icon">
+            </a>
+          </div>
         </div>
-        
         <div class="mobile-bottom-nav__item">
           <div class="mobile-bottom-nav__item-content">
-            <i class="material-icons">phone</i>
-            four
-          </div>		
+            <a href="your-link-here">
+              <img src="images/about-me.png" alt="About Icon" class="about-icon">
+            </a>
+          </div>
+        </div>
+
+        <div class="mobile-bottom-nav__item">
+          <div class="mobile-bottom-nav__item-content">
+            <a href="your-link-here">
+              <img src="images/contact.png" alt="Contact Me Icon" class="contact-icon">
+            </a>
+          </div>
         </div>
       </nav>
 
       <!-- desktop nav -->
-      <nav class="navbar">
+      <!-- <nav class="navbar">
         <ul>
           <li><a href="#"></a>Home</li>
           <li><a href="#"></a>Projects</li>
           <li><a href="#"></a>About</li>
         </ul>
-      </nav>
+      </nav> -->
 
       <div class="fullpage">
         <section class="left">
-          <h2>Hey there!</h2>
-          <h1>I'm Laura Kochen</h1>
+          <!-- <h2>Hey there!</h2> -->
+       
+          <span class="firstname">Laura </span>
+          <span class="lastname"> Kochen</span>
           <h2>
             a UX Designer with a background in Marketing and Graphic Design.
           </h2>
@@ -64,16 +101,40 @@
           <!-- above will be a link to my about page -->
         </section>
 
-        <section class="right">
+      <div class="right">
           <!-- <div class="centered"> -->
-          <h2>Projects</h2>
+          
+         <div class ="projects-background">
 
-            <section class = "project-one"></section>
-            <section class = "project-two"></section>
-            <section class = "project-three"></section>
-            <section class = "project-four"></section>
-
+            <section class="project-one">
+                <div class="container">
+               <img src="images/MovieDesktopHome.jpg" 
+                  alt="movie project home image" class="image" style="width:100%">
+            
+               <div class="middle">
+                <a href=""></a>
+              <div class="text">click here</div>
+        </div>
       </div>
+            </section>
+
+          <section class="project-two">
+              <div class="container">
+              <img src="images/AnotherProject.jpg" 
+               alt="another project image" class="image" style="width:100%">
+          
+              <div class="middle">
+              <a href=""></a>
+              <div class="text">click here</div>
+          </div>
+              </div>  
+          </section>
+      
+      <!-- Add more projects as needed -->
+    </div>
+  </div>
+
+      
     </main>
   </body>
 </html>
