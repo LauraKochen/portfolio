@@ -4,45 +4,10 @@ body {
   padding: 0;
   height: 100%;
   /* cursor: none; */
-}
-/* CURSOR CODE, IT'S NOT WORKING. JS INCLUDED IN PORTFOLIO-SLIDER.JS */
-
-.cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: rgba(52, 152, 219, 0.7);
-  border-radius: 50%;
-  pointer-events: none; /* Prevent interference with other elements */
-  transition: transform 0.2s ease;
-}
-
-.typing {
-  font-family: "Poiret+One";
-  white-space: nowrap;
-  overflow: hidden; /* Ensures text does not wrap */
-  border-right: 0px solid; /* Cursor effect */
-  width: 0; /* Start hidden */
-  animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  80% {
-    border-color: transparent;
-  }
+  /* CURSOR CODE, IT'S NOT WORKING. JS INCLUDED IN PORTFOLIO-SLIDER.JS */
 }
 
 /* TYPOGRAPHY */
-
 h1 {
   font-family: "Poiret One";
   font-size: 10rem;
@@ -71,7 +36,7 @@ h4 {
 }
 
 p {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-family: "Karla";
   color: #bfb3b4;
   text-align: left;
@@ -85,6 +50,41 @@ h5 {
   /* padding-left: 5rem; */
   line-height: 0.8rem;
   font-weight: 100;
+}
+
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(52, 152, 219, 0.7);
+  border-radius: 50%;
+  pointer-events: none; /* Prevent interference with other elements */
+  transition: transform 0.2s ease;
+}
+
+/* TYPING CODE FOR NAME LOAD */
+.typing {
+  font-family: "Poiret+One";
+  white-space: nowrap;
+  overflow: hidden; /* Ensures text does not wrap */
+  border-right: 0px solid; /* Cursor effect */
+  width: 0; /* Start hidden */
+  animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  80% {
+    border-color: transparent;
+  }
 }
 
 /* portfolio logo load */
@@ -101,7 +101,7 @@ h5 {
 
 /* MOBILE NAV */
 
-.mobile-bottom-nav {
+.navbar {
   display: flex;
   position: fixed;
   justify-content: space-around;
@@ -118,53 +118,99 @@ h5 {
   box-shadow: 0 -2px 5px -2px #333;
   background-color: #1c3334;
   color: white;
+}
 
-  .home-icon {
-    width: 6rem;
-    height: auto;
-    filter: brightness(0) invert(1);
-    margin: 1rem;
-  }
+.home-icon {
+  width: 6rem;
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin: 1rem;
+}
 
-  .portfolio-icon {
-    width: 6rem;
-    height: auto;
-    filter: brightness(0) invert(1);
-    margin: 1rem;
-  }
+.portfolio-icon {
+  width: 6rem;
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin: 1rem;
+}
 
-  .about-icon {
-    width: 6rem;
-    height: auto;
-    filter: brightness(0) invert(1);
-    margin: 1rem;
-  }
+.about-icon {
+  width: 6rem;
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin: 1rem;
+}
 
-  .contact-icon {
-    width: 6rem;
-    height: auto;
-    filter: brightness(0) invert(1);
-    margin: 1rem;
-  }
+.contact-icon {
+  width: 6rem;
+  height: auto;
+  filter: brightness(0) invert(1);
+  margin: 1rem;
+}
 
-  &__item {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 12px;
+&__item {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+&__item--active {
+  color: red;
+}
+&__item-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* DESKTOP NAV */
+
+/* MY NAV BAR MEDIA QUERY ISN'T WORKING FOR MY NAVIGATION */
+
+@media (min-width: 43.75em) {
+  /* .navbar {
+    display: none;
+  } */
+
+  .navbar-desktop {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  &__item--active {
-    color: red;
-  }
-  &__item-content {
-    display: flex;
-    flex-direction: column;
+    position: fixed;
+    justify-content: space-around;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #1c3334;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 }
 
-/* navbar  */
+/* .navbar ul {
+    list-style-type: none;
+    background-color: #1c3334;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+  }
+
+  .navbar a:hover {
+    background-color: #2b4e50;
+  }
+
+  .navbar li {
+    float: right;
+  } */
 
 /* do flex for the desktop */
 /* sticky for mobile */
@@ -174,38 +220,30 @@ h5 {
 
 /* title fonts*/
 
-.firstname {
-  font-family: "Roboto+Slab";
-  font-size: 15rem;
-  color: white;
-}
-
-.lastname {
-  font-family: "Roboto+Slab";
-  font-size: 15rem;
-  color: white;
-}
-
 #output {
   font-family: monospace;
-  white-space: pre; /* Preserve whitespace */
+  white-space: pre;
 }
 
 .left {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
-  height: 45vh;
+  height: 50vh;
   width: 100%;
   padding-left: 8rem;
   padding-right: 3rem;
-  /* padding-top: 15rem; */
 }
+
+/* @media (min-width: 43.75em) {
+  .left {
+    height: 100vh;
+  }
+} */
 
 .right {
   position: relative;
   width: 100%;
   background-color: white;
-  /* padding: 1rem; */
   height: 100vh;
   overflow: auto;
   padding-right: 3rem;
@@ -226,47 +264,6 @@ h5 {
   }
 } */
 
-/* DESKTOP NAV */
-
-.navbar {
-  background-color: #1c3334;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 60px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  background-color: #1c3334;
-  padding: 0px;
-  margin: 0px;
-  overflow: hidden;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-  display: block;
-  text-align: center;
-}
-
-.navbar a:hover {
-  background-color: #2b4e50;
-}
-
-.navbar li {
-  float: right;
-}
-
 /* add padding  */
 
 .fullpage {
@@ -281,7 +278,9 @@ h5 {
   /* at media dispay glex  */
 }
 
-/* project image container hover and style for desktop */
+/* PROJECT SECTION STYLING */
+
+/* PROJECT IMAGE CONTAINER HOVERS FOR DESKTOP */
 
 .container {
   position: relative;
@@ -324,18 +323,18 @@ h5 {
   padding: 16px 32px;
 }
 
-/* PROJECT SECTION STYLING */
+/* STYLING FOR THE PROJECT CONTAINER CONTENT */
 
 .project-container {
-  background-color: white; /* White background for the details box */
-  border: 2px solid #ccc; /* Grey border */
-  padding: 1rem; /* Space inside the box */
-  border-radius: 8px; /* Rounded corners for aesthetics */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for the details box */
+  background-color: white;
+  border: 2px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .project-details {
-  margin-bottom: 1rem; /* Space between the details and the image */
+  margin-bottom: 1rem;
 }
 
 .project-one {
@@ -389,15 +388,6 @@ h5 {
   margin-bottom: 3rem;
   margin-top: 8rem;
 }
-
-/* .projects {
-  background-size: cover; 
-  background-position: center; 
-  padding: 20px; 
-  color: white; 
-  height: 100vh;
-  background-color: white;
-} */
 
 /* STYLE FOR PROJECTS SLIDING IN ANIMATION*/
 
