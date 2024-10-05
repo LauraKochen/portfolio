@@ -1,140 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="normalize-fwd.css" />
-    <script src="loader.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="portfolio-slider.js"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
+    <!-- loader -->
 
-<!-- loader -->
- 
-<!-- <div class="overlay"></div> 
-  <div class="logo-container">
-    <img src="images/light-grey-logo-new.png" alt="portfolio logo in grey" class="logo">
-  </div> -->
-
-    <main class="content">
-      <!-- mobile nav -->
-
-      <nav class="mobile-bottom-nav">
-        <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-          <div class="mobile-bottom-nav__item-content">
-            <a href="your-link-here">
-              <img src="images/home-icon.png" alt="Home Icon" class="home-icon">
-            </a>
-          </div>
-        </div>
-        <div class="mobile-bottom-nav__item">
-          <div class="mobile-bottom-nav__item-content">
-            <a href="your-link-here">
-              <img src="images/portfolio.png" alt="Portfolio Icon" class="portfolio-icon">
-            </a>
-          </div>
-        </div>
-        <div class="mobile-bottom-nav__item">
-          <div class="mobile-bottom-nav__item-content">
-            <a href="your-link-here">
-              <img src="images/about-me.png" alt="About Icon" class="about-icon">
-            </a>
-          </div>
-        </div>
-
-        <div class="mobile-bottom-nav__item">
-          <div class="mobile-bottom-nav__item-content">
-            <a href="your-link-here">
-              <img src="images/contact.png" alt="Contact Me Icon" class="contact-icon">
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      <!-- desktop nav -->
-      <!-- <nav class="navbar">
-        <ul>
-          <li><a href="#"></a>Home</li>
-          <li><a href="#"></a>Projects</li>
-          <li><a href="#"></a>About</li>
-        </ul>
-      </nav> -->
-
-      <div class="fullpage">
-        <section class="left">
-          <!-- <h2>Hey there!</h2> -->
-       
-          <span class="firstname">Laura </span>
-          <span class="lastname"> Kochen</span>
-          <h2>
-            a UX Designer with a background in Marketing and Graphic Design.
-          </h2>
-          <p>
-            I love to build intuitive, engaging projects through a curious
-            creative lens!
-          </p>
-          <p><em>Learn more about me here! ></em></p>
-          <!-- above will be a link to my about page -->
-        </section>
-
-      <div class="right">
-          <!-- <div class="centered"> -->
-          
-         <div class ="projects-background">
-
-            <section class="project-one">
-                <div class="container">
-               <img src="images/MovieDesktopHome.jpg" 
-                  alt="movie project home image" class="image" style="width:100%">
-            
-               <div class="middle">
-                <a href=""></a>
-              <div class="text">click here</div>
-        </div>
-      </div>
-            </section>
-
-          <section class="project-two">
-              <div class="container">
-              <img src="images/AnotherProject.jpg" 
-               alt="another project image" class="image" style="width:100%">
-          
-              <div class="middle">
-              <a href=""></a>
-              <div class="text">click here</div>
-          </div>
-              </div>  
-          </section>
-      
-      <!-- Add more projects as needed -->
+    <div id="loading-screen">
+    <div class="typing-container">
+      <h1 id="typed-text"></h1>
     </div>
-  </div>
 
-      
-    </main>
+    
+
+    <div id="main-content">
+      <main class="site">
+        <div class="wrapper">
+          <div class="wrapper-inner"></div>
+        </div>
+        <div id="circle" class="circle"></div>
+
+        <!-- MOBILE NAV -->
+        <nav class="mobile-bottom-nav">
+          <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+            <div class="mobile-bottom-nav__item-content">
+              <a href="your-link-here">
+                <img
+                  src="images/home-icon.png"
+                  alt="Home Icon"
+                  class="home-icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="mobile-bottom-nav__item">
+            <div class="mobile-bottom-nav__item-content">
+              <a href="your-link-here">
+                <img
+                  src="images/portfolio.png"
+                  alt="Portfolio Icon"
+                  class="portfolio-icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="mobile-bottom-nav__item">
+            <div class="mobile-bottom-nav__item-content">
+              <a href="your-link-here">
+                <img
+                  src="images/about-me.png"
+                  alt="About Icon"
+                  class="about-icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="mobile-bottom-nav__item">
+            <div class="mobile-bottom-nav__item-content">
+              <a href="your-link-here">
+                <img
+                  src="images/contact.png"
+                  alt="Contact Me Icon"
+                  class="contact-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="fullpage">
+          <section class="left">
+            <span class="firstname">Laura </span>
+            <span class="lastname"> Kochen</span>
+            <h2>UX Designer</h2>
+            <h4>
+              with a background <br />in Marketing and <br />Graphic Design.
+            </h4>
+            <p><em>Learn more about me here! >></em></p>
+          </section>
+
+          <div class="right">
+            <!-- PROJECTS CODE -->
+            <div class="projects">
+              <section class="project-one">
+                <div class="container">
+                  <img
+                    src="images/MovieDesktopHome.jpg"
+                    alt="movie project home image"
+                    class="image"
+                    style="width: 100%"
+                  />
+                  <div class="middle">
+                    <a href=""></a>
+                    <div class="text">click here</div>
+                  </div>
+                </div>
+              </section>
+              <section class="project-two">
+                <div class="container">
+                  <img
+                    src="images/game-screenshot.png"
+                    alt="game kray kray kittens"
+                    class="image"
+                    style="width: 100%"
+                  />
+                  <div class="middle">
+                    <a href=""></a>
+                    <div class="text">click here</div>
+                  </div>
+                </div>
+              </section>
+              <!-- Add more projects as needed -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>

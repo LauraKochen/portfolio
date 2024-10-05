@@ -1,0 +1,52 @@
+.logo-container {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust to center */
+  animation: spin 3s ease-in-out forwards, moveToTopLeft 2s ease forwards 2s; /* Spin and then move */
+}
+
+.logo {
+  width: 100px; /* Adjust size as needed */
+  animation: scaleUp 3s ease-in-out forwards, scaleDown 3s ease forwards 2s;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes moveToTopLeft {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  100% {
+    top: 20px; /* Adjust to your desired top position */
+    left: 20px; /* Adjust to your desired left position */
+    transform: translate(0, 0) rotate(360deg); /* Final position */
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1); /* Start at normal size */
+  }
+  100% {
+    transform: scale(6); /* Scale up to 1.5 times */
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.5); /* Start from the scaled-up size */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
