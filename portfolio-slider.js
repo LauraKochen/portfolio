@@ -1,3 +1,5 @@
+// type into text, not working, this is the one I wish was
+
 const textArray = ["Designer", "Developer", "Creative Thinker"];
 let textIndex = 0;
 let charIndex = 0;
@@ -28,7 +30,7 @@ function deleteText() {
 
 type();
 
-/* type text intro */
+/* type text intro  */
 
 const textLines = [
   "Hello, world!",
@@ -69,4 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
       project.classList.add("animate");
     }, index * 500); // Adjust the timing as needed
   });
+});
+
+// CURSOR JAVASCRIPT, NOT WORKING
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 });

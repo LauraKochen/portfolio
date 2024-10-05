@@ -1,4 +1,21 @@
-/* cursor */
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* cursor: none; */
+}
+/* CURSOR CODE, IT'S NOT WORKING. JS INCLUDED IN PORTFOLIO-SLIDER.JS */
+
+.cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(52, 152, 219, 0.7);
+  border-radius: 50%;
+  pointer-events: none; /* Prevent interference with other elements */
+  transition: transform 0.2s ease;
+}
 
 .typing {
   font-family: "Poiret+One";
@@ -65,15 +82,9 @@ h5 {
   font-family: "karla";
   color: hsl(183, 30%, 16%);
   margin-bottom: 0 !important;
-  padding-left: 5rem;
+  /* padding-left: 5rem; */
   line-height: 0.8rem;
   font-weight: 100;
-}
-body {
-  background-color: black;
-  margin: 0;
-  padding: 0;
-  height: 100%;
 }
 
 /* portfolio logo load */
@@ -314,6 +325,18 @@ body {
 }
 
 /* PROJECT SECTION STYLING */
+
+.project-container {
+  background-color: white; /* White background for the details box */
+  border: 2px solid #ccc; /* Grey border */
+  padding: 1rem; /* Space inside the box */
+  border-radius: 8px; /* Rounded corners for aesthetics */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for the details box */
+}
+
+.project-details {
+  margin-bottom: 1rem; /* Space between the details and the image */
+}
 
 .project-one {
   background-color: #eaffff;
