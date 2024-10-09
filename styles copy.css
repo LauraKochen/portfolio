@@ -10,20 +10,20 @@ body {
 /* TYPOGRAPHY */
 h1 {
   font-family: "Poiret One";
-  font-size: 10rem;
+  font-size: 3rem;
   color: #d5b1c8;
-  line-height: 10rem;
+  line-height: 5rem;
   letter-spacing: 1rem;
   font-weight: 200;
 }
 
 h2 {
-  font-size: 6rem;
+  font-size: 2rem;
   font-family: "karla";
   color: #bfb3b4;
   margin-bottom: 0 !important;
   padding: 0;
-  line-height: 0.8rem;
+  line-height: 1rem;
   font-weight: 100;
 }
 
@@ -36,30 +36,37 @@ h4 {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Karla";
   color: #bfb3b4;
   text-align: left;
 }
 
 h5 {
-  font-size: 4rem;
+  font-size: 1.5rem;
   font-family: "karla";
   color: hsl(183, 30%, 16%);
   margin-bottom: 0 !important;
   /* padding-left: 5rem; */
-  line-height: 0.8rem;
+  line-height: 1.5rem;
   font-weight: 100;
 }
 
 .cursor {
+  display: none;
   position: absolute;
   width: 20px;
   height: 20px;
   background: rgba(52, 152, 219, 0.7);
   border-radius: 50%;
-  pointer-events: none; /* Prevent interference with other elements */
+  pointer-events: none;
   transition: transform 0.2s ease;
+}
+
+@media (min-width: 43.75em) {
+  .cursor {
+    display: block;
+  }
 }
 
 /* TYPING CODE FOR NAME LOAD */
@@ -114,35 +121,35 @@ h5 {
   z-index: 1000;
   will-change: transform;
   transform: translateZ(0);
-  height: 10rem;
+  height: 5rem;
   box-shadow: 0 -2px 5px -2px #333;
-  background-color: #1c3334;
+  background-color: black;
   color: white;
 }
 
 .home-icon {
-  width: 6rem;
+  width: 2rem;
   height: auto;
   filter: brightness(0) invert(1);
   margin: 1rem;
 }
 
 .portfolio-icon {
-  width: 6rem;
+  width: 2rem;
   height: auto;
   filter: brightness(0) invert(1);
   margin: 1rem;
 }
 
 .about-icon {
-  width: 6rem;
+  width: 2rem;
   height: auto;
   filter: brightness(0) invert(1);
   margin: 1rem;
 }
 
 .contact-icon {
-  width: 6rem;
+  width: 2rem;
   height: auto;
   filter: brightness(0) invert(1);
   margin: 1rem;
@@ -165,52 +172,56 @@ h5 {
 }
 
 /* DESKTOP NAV */
-
-/* MY NAV BAR MEDIA QUERY ISN'T WORKING FOR MY NAVIGATION */
+.navbar-desktop {
+  display: none;
+}
 
 @media (min-width: 43.75em) {
-  /* .navbar {
+  .navbar {
     display: none;
-  } */
+  }
 
   .navbar-desktop {
+    font-family: karla;
+    text-decoration: none;
     display: flex;
     position: fixed;
     justify-content: space-around;
     padding: 1rem;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    width: 50%;
+    /* right: 0; */
     z-index: 1000;
-    background-color: #1c3334;
+    background-color: black;
     color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* transform: translate(-50%); */
   }
 }
 
-/* .navbar ul {
-    list-style-type: none;
-    background-color: #1c3334;
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;
-  }
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
 
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
-  }
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
 
-  .navbar a:hover {
-    background-color: #2b4e50;
-  }
+.navbar a:hover {
+  background-color: pink;
+}
 
-  .navbar li {
-    float: right;
-  } */
+.navbar li {
+  float: right;
+}
 
 /* do flex for the desktop */
 /* sticky for mobile */
@@ -230,7 +241,7 @@ h5 {
   top: 0;
   height: 50vh;
   width: 100%;
-  padding-left: 8rem;
+  padding-left: 2rem;
   padding-right: 3rem;
 }
 
@@ -246,8 +257,13 @@ h5 {
   background-color: white;
   height: 100vh;
   overflow: auto;
-  padding-right: 3rem;
+  padding-right: 2rem;
   padding-left: 3rem;
+}
+
+@media (min-width: 43.75em) {
+  .right {
+  }
 }
 
 .right img {
@@ -284,17 +300,17 @@ h5 {
 
 .container {
   position: relative;
-  width: 80%;
+  width: 95%;
 }
 
 .image {
   opacity: 1;
   display: block;
   width: 100%;
-  height: auto;
+  /* height: auto; */
   transition: 0.5s ease;
   backface-visibility: hidden;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .middle {
@@ -319,8 +335,8 @@ h5 {
 .text {
   background-color: #376e6f;
   color: white;
-  font-size: 16px;
-  padding: 16px 32px;
+  font-size: 1rem;
+  padding: 1rem 2rem;
 }
 
 /* STYLING FOR THE PROJECT CONTAINER CONTENT */
@@ -328,8 +344,8 @@ h5 {
 .project-container {
   background-color: white;
   border: 2px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -346,8 +362,8 @@ h5 {
   opacity: 0;
   transform: translateX(-100%);
   animation: slideIn 0.8s forwards;
-  margin-bottom: 3rem;
-  margin-top: 8rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .project-two {
@@ -360,7 +376,6 @@ h5 {
   transform: translateX(-100%);
   animation: slideIn 0.8s forwards;
   margin-bottom: 3rem;
-  margin-top: 8rem;
 }
 
 .project-three {
@@ -373,7 +388,6 @@ h5 {
   transform: translateX(-100%);
   animation: slideIn 0.8s forwards;
   margin-bottom: 3rem;
-  margin-top: 8rem;
 }
 
 .project-four {
@@ -385,8 +399,7 @@ h5 {
   opacity: 0;
   transform: translateX(-100%);
   animation: slideIn 0.8s forwards;
-  margin-bottom: 3rem;
-  margin-top: 8rem;
+  margin-bottom: 12rem;
 }
 
 /* STYLE FOR PROJECTS SLIDING IN ANIMATION*/
