@@ -7,6 +7,17 @@ body {
   /* CURSOR CODE, IT'S NOT WORKING. JS INCLUDED IN PORTFOLIO-SLIDER.JS */
 }
 
+@media (min-width: 43.75em) {
+  .fullpage {
+    height: 100vh;
+    display: flex;
+    /* justify-content: center;
+    align-items: center;
+    text-align: center;
+     */
+  }
+}
+
 /* TYPOGRAPHY */
 h1 {
   font-family: "Poiret One";
@@ -17,11 +28,21 @@ h1 {
   font-weight: 200;
 }
 
+@media (min-width: 43.75em) {
+  h1 {
+    font-size: 10rem;
+    line-height: 9rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+}
+
 h2 {
   font-size: 2rem;
   font-family: "karla";
   color: #bfb3b4;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   padding: 0;
   line-height: 1rem;
   font-weight: 100;
@@ -31,7 +52,7 @@ h4 {
   font-size: 3rem;
   font-family: "Karla";
   color: #bfb3b4;
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
   font-weight: 50;
 }
 
@@ -182,45 +203,89 @@ h5 {
   }
 
   .navbar-desktop {
-    font-family: karla;
+    font-family: "Karla", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
     text-decoration: none;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
-    justify-content: space-around;
-    padding: 1rem;
     top: 0;
-    left: 50%;
-    width: 50%;
-    /* right: 0; */
-    z-index: 1000;
+    right: 0;
+    height: 100vh;
+    width: 15rem;
+    padding: 2rem 0;
     background-color: black;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* transform: translate(-50%); */
+    color: #d5b1c8;
+    z-index: 1000;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+    transition: width 0.3s ease;
   }
-}
 
-.navbar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
+  .navbar-desktop.collapsed {
+    width: 6rem;
+  }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-  display: block;
-  text-align: center;
-}
+  .navbar-desktop ul {
+    padding: 0;
+  }
 
-.navbar a:hover {
-  background-color: pink;
-}
+  .navbar-desktop li {
+    margin: 1.5rem 0;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+  }
 
-.navbar li {
-  float: right;
+  .navbar-desktop.collapsed li {
+    transform: translateX(-50%);
+  }
+
+  .navbar-desktop a {
+    color: #d5b1c8;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: color 0.3s ease;
+    padding-bottom: 0.2rem;
+  }
+
+  .navbar-desktop a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d5b1c8;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-desktop a:hover {
+    color: #fff;
+  }
+
+  .navbar-desktop a:hover::after {
+    width: 100%;
+  }
+
+  /* Toggle Button */
+  .nav-toggle {
+    background: none;
+    border: none;
+    color: #d5b1c8;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+
+  .navbar-desktop.collapsed .nav-toggle {
+    font-size: 1.5rem;
+  }
 }
 
 /* do flex for the desktop */
