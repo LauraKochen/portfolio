@@ -18,137 +18,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://use.typekit.net/mif2gkw.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Pacifico&display=swap" rel="stylesheet">
-
   </head>
 
   <body>
 
-    <canvas id="bgCanvas"></canvas>
-    <script>
-        const canvas = document.getElementById('bgCanvas');
-        const context = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    
-        let particlesArray = [];
-        let mouse = {
-            x: null,
-            y: null,
-            radius: 100 // Adjust this value for the distance at which particles react
-        };
-    
-        // Update mouse position
-        window.addEventListener('mousemove', function(event) {
-            mouse.x = event.x;
-            mouse.y = event.y;
-        });
-    
-        // Handle Resize
-        window.addEventListener('resize', function() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            initParticles(); // Reinitialize particles on resize
-        });
-    
-        // Create Particle class
-        class Particle {
-            constructor(x, y, directionX, directionY, size, color) {
-                this.x = x;
-                this.y = y;
-                this.directionX = directionX;
-                this.directionY = directionY;
-                this.size = size;
-                this.color = color;
-            }
-    
-            // Draw individual particle
-            draw() {
-                context.beginPath();
-                context.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                context.fillStyle = this.color;
-                context.fill();
-            }
-    
-            // Update particle position and apply mouse attraction
-            update() {
-            // Move particles within canvas bounds
-            if (this.x + this.size > canvas.width || this.x - this.size < 0) {
-                this.directionX = -this.directionX;
-            }
-            if (this.y + this.size > canvas.height || this.y - this.size < 0) {
-                this.directionY = -this.directionY;
-            }
+<!-- loader -->
 
-            // Check if particle is within mouse radius
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance < mouse.radius) {
-                this.x += dx * 0.2; // Adjust this value to control how strongly particles follow the mouse
-                this.y += dy * 0.2;
-            }
-
-            this.x += this.directionX;
-            this.y += this.directionY;
-            this.draw();
-        }
-    }
-
-    // Initialize particles
-    function initParticles() {
-        particlesArray = [];
-        const numberOfParticles = (canvas.width * canvas.height) / 9000;
-        for (let i = 0; i < numberOfParticles; i++) {
-            let size = Math.random() * 5 + 1;
-            let x = Math.random() * (canvas.width - size * 2) + size;
-            let y = Math.random() * (canvas.height - size * 2) + size;
-            let directionX = (Math.random() * 0.4) - 0.2;
-            let directionY = (Math.random() * 0.4) - 0.2;
-            let color = 'rgba(255, 255, 255, 0.3)';
-
-            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-        }
-    }
-
-    // Animate particles
-    function animate() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) {
-            particlesArray[i].update();
-        }
-        requestAnimationFrame(animate);
-    }
-
-    // Start animation
-    initParticles();
-    animate();
-</script>
-<style>
-    #bgCanvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-    }
-</style>
-
+<!-- OPENING ANIMATION TITLES -->
+<!-- <div class="gallery">
+  <div class="img-container">
+      <img src="image1.jpg" alt="Image 1">
+  </div>
+  <div class="img-container">
+      <img src="image2.jpg" alt="Image 2">
+  </div>
+  <div class="img-container">
+      <img src="image3.jpg" alt="Image 3">
+  </div>
+</div> -->
+<!--  -->
 <div class="cursor"></div>
 
-<div class="typing-container">
-  <h1 id="typed-text"></h1>
-</div>
+
     <main class="site">
 ]
-      
+      <!-- cursor -->
+
+
+      <!-- <div class="wrapper">
+        <div class="wrapper-inner">
+        </div>
+      </div>
+      <div id="circle" class="circle"></div> -->
 
 <!-- MOBILE NAV -->
 
@@ -194,34 +95,23 @@
         </ul>
       </nav>
 
-      
 
       <div id="output"></div>
 
 
       <div class="fullpage">
-        <section class="left">
-
-            <div id="title-output"></div>
-            <section class="typing">
-                <h1>Laura <br>Kochen</h1>
-            </section>
-                <h2>UX Designer</h2>
-                <h2 >Graphic Artist</h2>
-                <h2 class="text-one">Creative Thinker</h2>
-            </div>
-            
-        </section>
+        
 
       <div class="right">
 
       <!-- PROJECTS CODE -->
           
-      <!-- <h5>Featured Projects</h5>
+      <h5>Featured Projects</h5>
          <div class ="projects">
 
           <section class="project-one">
             <div class="project-container">
+              <!-- <div class="container"> -->
                   <img src="images/gladiator.png" 
                   alt="movie project home image" class="image" style="width:100%">
                   <div class="project-details"></div>
@@ -252,6 +142,7 @@
 
           <section class="project-three">
             <div class="project-container">
+            <!-- <div class="container"> -->
             <img src="images/macbook-style-guide.png" 
              alt="style guide" class="image" style="width:100%">
              <div class="project-details">
@@ -265,6 +156,7 @@
         </section>
 
         <section class="project-four">
+            <!-- <div class="container"> -->
                 <div class="project-container">
             <img src="images/macbook-UX.png" 
              alt="UX Project" class="image" style="width:100%">
@@ -278,8 +170,9 @@
         </div>
         </section>
       
-      </div>
-    </div> -->
+      <!-- Add more projects as needed -->
+    </div>
+  </div>
 
       
     </main>
