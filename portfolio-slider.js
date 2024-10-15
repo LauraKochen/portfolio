@@ -32,34 +32,34 @@ type();
 
 /* type text intro  */
 
-const textLines = [
-  "Hello, world!",
-  "Welcome to my website.",
-  "Enjoy your stay!",
-];
+// const textLines = [
+//   "Hello, world!",
+//   "Welcome to my website.",
+//   "Enjoy your stay!",
+// ];
 
-let lineIndex = 0;
-let charIndex = 0;
+// let lineIndex = 0;
+// let charIndex = 0;
 
-function typeLine() {
-  if (lineIndex < textLines.length) {
-    const currentLine = textLines[lineIndex];
-    const outputDiv = document.getElementById("output");
+// function typeLine() {
+//   if (lineIndex < textLines.length) {
+//     const currentLine = textLines[lineIndex];
+//     const outputDiv = document.getElementById("output");
 
-    if (charIndex < currentLine.length) {
-      outputDiv.textContent += currentLine.charAt(charIndex);
-      charIndex++;
-      setTimeout(typeLine, 100); // Adjust typing speed here
-    } else {
-      outputDiv.textContent += "\n"; // Move to the next line
-      lineIndex++;
-      charIndex = 0;
-      setTimeout(typeLine, 500); // Pause before the next line
-    }
-  }
-}
+//     if (charIndex < currentLine.length) {
+//       outputDiv.textContent += currentLine.charAt(charIndex);
+//       charIndex++;
+//       setTimeout(typeLine, 100); // Adjust typing speed here
+//     } else {
+//       outputDiv.textContent += "\n"; // Move to the next line
+//       lineIndex++;
+//       charIndex = 0;
+//       setTimeout(typeLine, 500); // Pause before the next line
+//     }
+//   }
+// }
 
-typeLine();
+// typeLine();
 
 // PROJECTS SLIDER
 
@@ -84,4 +84,14 @@ document.addEventListener("mousemove", (e) => {
 function toggleNavbar() {
   const navbar = document.querySelector(".navbar-desktop");
   navbar.classList.toggle("collapsed");
+}
+
+// PROJECTS MODAL CODE
+
+function openModal() {
+  document.getElementById("projectModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("projectModal").style.display = "none";
 }
