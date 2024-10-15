@@ -2,8 +2,11 @@ body {
   background-color: black;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   cursor: none;
+  background-repeat: none;
+  background-size: cover;
+  /* overflow: hidden; */
 }
 
 @media (min-width: 43.75em) {
@@ -18,18 +21,20 @@ body {
   }
   .body {
     background-color: white;
+    overflow: hidden;
   }
 }
 
 /* TYPOGRAPHY */
+
 h1 {
-  /* font-family: "Poiret One"; */
-  /* font-family: "ratiomodern"; */
+  font-family: "ubuntu";
   font-size: 3rem;
-  color: #d5b1c8;
-  line-height: 8rem;
-  letter-spacing: 1rem;
-  font-weight: 200;
+  color: white;
+  line-height: 5rem;
+  margin-left: 1rem;
+  /* letter-spacing: 1rem; */
+  font-weight: 100;
 }
 
 @media (min-width: 43.75em) {
@@ -37,9 +42,13 @@ h1 {
     font-size: 12rem;
     line-height: 10rem;
     font-weight: 100;
+    margin-top: 10rem;
+    color: white;
+    text-shadow: 8px 6px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 2rem;
   }
   h2 {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 }
 
@@ -51,11 +60,13 @@ h2 {
   padding: 0;
   line-height: 1rem;
   font-weight: 100;
+  margin-left: 1rem;
 }
 
 .text-one {
-  font-family: "pacifico";
+  font-family: "ramona";
   font-weight: 100rem;
+  letter-spacing: 0.5rem;
 }
 
 h4 {
@@ -145,10 +156,11 @@ h5 {
   justify-content: space-around;
   padding-left: 1rem;
   padding-right: 1rem;
-  /* padding-top: 1rem; */
+  padding-top: 1rem;
   bottom: 0;
   left: 0;
   right: 0;
+  /* top: 0; */
   z-index: 1000;
   will-change: transform;
   transform: translateZ(0);
@@ -186,7 +198,7 @@ h5 {
   margin: 1rem;
 }
 
-&__item {
+.navbar__item {
   flex-grow: 1;
   text-align: center;
   font-size: 12px;
@@ -197,7 +209,7 @@ h5 {
 &__item--active {
   color: red;
 }
-&__item-content {
+.navbar_item-content {
   display: flex;
   flex-direction: column;
 }
@@ -214,57 +226,70 @@ h5 {
 
   .navbar-desktop {
     font-family: "Karla", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 100;
     text-decoration: none;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 8rem;
-    padding: 2rem 0;
-    background-color: #d5b1c8;
-    color: black;
+    /* height: 100vh; */
+    /* width: 8rem; */
+    /* padding: 2rem 0; */
+    /* background-color: #d5b1c8; */
+    color: white;
     z-index: 1000;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     list-style-type: none;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease; */
+
+    width: 100%;
+    padding: 1rem;
   }
 
-  .navbar-desktop.collapsed {
+  /* .navbar-desktop.collapsed {
     width: 6rem;
-  }
+  } */
 
   .navbar-desktop ul {
     padding: 0;
+    list-style-type: none;
+
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .navbar-desktop li {
-    margin: 5rem 0;
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    text-align: center;
+    /* margin: 5rem 0; */
+    /* transition: transform 0.3s ease; */
+    /* overflow: hidden;
+    text-align: center; */
+    margin-right: 2rem;
   }
 
-  .navbar-desktop.collapsed li {
+  /* .navbar-desktop.collapsed li {
     transform: translateX(-50%);
-  }
+
+  } */
 
   .navbar-desktop a {
-    color: black;
-    text-decoration: none;
-    display: flex;
+    /* color: black;
+    text-decoration: none; */
+    /* display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     transition: color 0.3s ease;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.2rem; */
+    color: white;
+    text-decoration: none;
+    padding: 4rem;
   }
 
-  .navbar-desktop a::after {
+  /* .navbar-desktop a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -273,28 +298,29 @@ h5 {
     height: 2px;
     background-color: black;
     transition: width 0.3s ease;
-  }
+  } */
 
   .navbar-desktop a:hover {
-    color: #fff;
+    color: rgb(177, 128, 223);
+    font-size: 1.5rem;
   }
 
-  .navbar-desktop a:hover::after {
+  /* .navbar-desktop a:hover::after {
     width: 100%;
-  }
+  } */
 
-  .nav-toggle {
+  /* .nav-toggle {
     background: none;
     border: none;
     color: #d5b1c8;
     font-size: 2rem;
     cursor: pointer;
     margin-bottom: 2rem;
-  }
+  } */
 
-  .navbar-desktop.collapsed .nav-toggle {
+  /* .navbar-desktop.collapsed .nav-toggle {
     font-size: 1.5rem;
-  }
+  } */
 }
 
 /* do flex for the desktop */
@@ -417,7 +443,7 @@ h5 {
 .project-container {
   background-color: white;
   border: 2px solid #ccc;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -478,31 +504,15 @@ h5 {
 /* STYLE FOR PROJECTS SLIDING IN ANIMATION*/
 
 .projects {
-  display: flex; /* Align items in a row */
-  flex-direction: column; /* Adjust based on your layout */
-  overflow: hidden; /* Hide overflow for the sliding effect */
-  /* left: 0; */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   opacity: 0;
   transform: translateX(-100%);
   animation: slideIn 0.5s forwards;
   margin-bottom: 3rem;
+  align-items: center;
 }
-
-/* .project-one {
-  opacity: 0;
-  transform: translateX(-100%);
-  animation: slideIn 0.8s forwards;
-  margin-bottom: 3rem;
-  margin-top: 8rem;
-} */
-
-/* .project-two {
-  opacity: 0; 
-  transform: translateX(-100%); 
-  animation: slideIn 0.8s forwards; 
-  animation-delay: 0.5s;
-  margin: 1rem 0; 
-} */
 
 @keyframes slideIn {
   0% {
