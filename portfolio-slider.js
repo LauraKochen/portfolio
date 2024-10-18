@@ -75,23 +75,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // CURSOR JAVASCRIPT, NOT WORKING
 
-const cursor = document.querySelector(".cursor");
+// const cursor = document.querySelector(".cursor");
 
-document.addEventListener("mousemove", (e) => {
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-});
+// document.addEventListener("mousemove", (e) => {
+//   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+// });
 
-function toggleNavbar() {
-  const navbar = document.querySelector(".navbar-desktop");
-  navbar.classList.toggle("collapsed");
-}
+// function toggleNavbar() {
+//   const navbar = document.querySelector(".navbar-desktop");
+//   navbar.classList.toggle("collapsed");
+// }
 
-// PROJECTS MODAL CODE
+// // PROJECTS MODAL CODE
 
-function openModal() {
-  document.getElementById("projectModal").style.display = "block";
-}
+// function openModal() {
+//   document.getElementById("projectModal").style.display = "block";
+// }
 
-function closeModal() {
-  document.getElementById("projectModal").style.display = "none";
-}
+// function closeModal() {
+//   document.getElementById("projectModal").style.display = "none";
+// }

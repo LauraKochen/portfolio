@@ -5,9 +5,8 @@
 	  <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="normalize-fwd.css" />
     <link rel="stylesheet" href="styles copy.css" />
-         <script src="portfolio-slider.js"></script>
-         <script src="titles.js"></script>
-
+         <script src="portfolio-slider.js" defer></script>
+         <script src="portfolio-modal.js" defer></script>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
@@ -31,17 +30,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
 
-<!-- dynaminically bring in mountains, maybe put name in the middle. have mountain in corner so that the text can be over it. darken nav, choose new fonts for h2s on home -->
+
 
 
 
@@ -50,9 +41,11 @@
   </head>
 
   
-  <body>
+  <body style ="background-image: url(images/space_crop.png); background-size: cover; background-position: bottom; background-attachment: fixed;">
     
-;
+
+
+<!-- PARTICLES CODE -->
     <canvas id="bgCanvas"></canvas>
     <script>
         const canvas = document.getElementById('bgCanvas');
@@ -158,19 +151,16 @@
     #bgCanvas {
         position: fixed;
         top: 0;
-        bottom: 0;
         left: 0;
         width: 100vw;
-       
+        height: 100vh;
         z-index: -1;
     }
 </style>
 
-<div class="cursor"></div>
+<!-- <div class="cursor"></div> -->
 
-<div class="typing-container">
-  <h1 id="typed-text"></h1>
-</div>
+
     <main class="site">
 ]
       
@@ -215,7 +205,7 @@
         <li><a href="index2.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="about2.html">About</a></li>
-        <!-- <li><a href="#contact">Contact</a></li> -->
+        <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
@@ -224,29 +214,15 @@
       <div id="output"></div>
 
 
-      <div class="fullpage-home">
-        <section class="left">
+      <div class="fullpage">
 
-            <div id="title-output"></div>
-            <section class="typing">
-                <h1>Laura <br>Kochen</h1>
-            </section>
-                <h2 class="UX">UX Designer</h2>
-                <!-- <h2 class="graphic-artist">Graphic Artist</h2> -->
-                <!-- <h2 class="creative-thinker">Creative Thinker</h2> -->
-      </div>
-
-      <div class="nebula"></div>
-
-     
       </div>
             
         </section>
 
-      <!-- <div class="right"> -->
+        
 
-
-
+      
       
     </main>
   </body>
