@@ -1,3 +1,28 @@
+/* spaceman ---------------------------------------------------------------*/
+
+.spaceman {
+  position: fixed;
+  bottom: 50px;
+  left: -100px; /* Start off-screen */
+  animation: walk 5s linear forwards;
+}
+
+.spaceman img {
+  width: 150px; /* Adjust size of spaceman */
+  height: auto;
+}
+
+/* Animation to move the spaceman across the screen */
+@keyframes walk {
+  0% {
+    left: -100px; /* Start off-screen */
+  }
+  100% {
+    left: 100vw; /* Move to the far right of the screen */
+  }
+}
+/* spaceman code from chatgpt----------------------------------------------------- */
+
 body {
   background-color: black;
   margin: 0;
@@ -124,7 +149,7 @@ h5 {
   font-family: "karla";
   color: white;
   margin-bottom: 0 !important;
-  padding-left: 5rem;
+  padding-left: 1rem;
   line-height: 1.5rem;
   font-weight: 100;
 }
@@ -670,8 +695,31 @@ h5 {
 
 /* ----------------------------------------------------- */
 
-.about-image {
-  height: 5rem;
-  width: 5rem;
-  left: 0;
+/* THIS IS FOR MOBILE */
+
+.about-intro {
+  display: flex;
+  align-items: top;
+}
+
+.about-intro img {
+  height: 6rem;
+  width: auto;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  /* padding: none; */
+}
+
+.about-intro p {
+  margin-left: 1;
+  padding-right: 0.5rem;
+}
+
+.developer-stack img {
+  max-width: 50%;
+  margin: 1rem;
+}
+
+.contact {
+  margin-left: 1rem;
 }
