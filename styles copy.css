@@ -3,7 +3,7 @@
 .spaceman {
   position: fixed;
   bottom: 50px;
-  left: -100px; /* Start off-screen */
+  left: -100px;
   animation: walk 5s linear forwards;
 }
 
@@ -152,6 +152,12 @@ h5 {
   padding-left: 1rem;
   line-height: 1.5rem;
   font-weight: 100;
+}
+
+h6 {
+  font-size: 2rem;
+  font-family: "karla";
+  color: white;
 }
 
 /* TYPOGRAPHY END--------------------------- */
@@ -387,14 +393,14 @@ h5 {
   }
 
   .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.6);
   }
 
   /* Modal content */
@@ -411,19 +417,19 @@ h5 {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers content horizontally */
+    align-items: center;
   }
 
   .image-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem; /* Space between images */
+    gap: 1rem;
   }
 
   .image-container img {
-    width: auto; /* Maintain original aspect ratio */
-    max-width: 80%; /* Constrain width relative to container */
+    width: auto;
+    max-width: 80%;
     height: auto;
   }
 
@@ -695,7 +701,7 @@ h5 {
 
 /* ----------------------------------------------------- */
 
-/* THIS IS FOR MOBILE */
+/* THIS IS FOR MOBILE ABOUT */
 
 .about-intro {
   display: flex;
@@ -716,10 +722,79 @@ h5 {
 }
 
 .developer-stack img {
-  max-width: 50%;
+  max-height: 5rem;
+  margin: 1rem;
+}
+
+.design-stack img {
+  max-height: 5rem;
   margin: 1rem;
 }
 
 .contact {
-  margin-left: 1rem;
+  margin-left: rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+.contact {
+  text-align: center;
+}
+
+/* TABLET ABOUT ----------------------------------------- */
+
+@media (min-width: 48em) {
+  .about-intro img {
+    height: 12rem;
+  }
+  p {
+    font-size: 2rem;
+    padding-top: none;
+  }
+
+  h5 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    /* line-height: 2.5rem; */
+    font-size: 3rem;
+  }
+
+  .design-stack img {
+    max-height: 10rem;
+  }
+
+  .developer-stack img {
+    max-height: 10rem;
+  }
+}
+
+/* DESKTOP ABOUT----------------------------------------------- */
+@media (min-width: 43.75em) {
+  .about-intro {
+    flex: 0 0 40%; /* 40% of the page */
+    padding-right: 20px; /* Add some padding for spacing */
+  }
+
+  .about-intro img {
+    max-width: 100%; /* Ensure the image is responsive */
+    /* height: auto; */
+    display: block;
+    margin-bottom: 10px; /* Space between image and paragraph */
+  }
+
+  .about-intro p {
+    margin-top: 0; /* Remove default top margin from the paragraph */
+  }
+
+  .design-stack img {
+    max-height: 5rem;
+  }
+
+  .design-stack img {
+    max-height: 15rem;
+  }
 }
