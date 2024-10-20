@@ -752,6 +752,8 @@ h6 {
   p {
     font-size: 2rem;
     padding-top: none;
+    margin-left: 2rem;
+    margin-right: 1rem;
   }
 
   h5 {
@@ -764,37 +766,53 @@ h6 {
   }
 
   .design-stack img {
-    max-height: 10rem;
+    max-height: 6rem;
   }
 
   .developer-stack img {
-    max-height: 10rem;
+    max-height: 6rem;
   }
 }
 
 /* DESKTOP ABOUT----------------------------------------------- */
 @media (min-width: 43.75em) {
+  /* .container-about {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    padding: 20px;
+  }
+
   .about-intro {
-    flex: 0 0 40%; /* 40% of the page */
-    padding-right: 20px; /* Add some padding for spacing */
+    flex: 1; 
+    max-width: 40%; 
   }
 
-  .about-intro img {
-    max-width: 100%; /* Ensure the image is responsive */
-    /* height: auto; */
-    display: block;
-    margin-bottom: 10px; /* Space between image and paragraph */
+  .stack {
+    flex: 1; 
+    max-width: 40%; 
+    display: flex;
+    flex-direction: column; 
   }
 
-  .about-intro p {
-    margin-top: 0; /* Remove default top margin from the paragraph */
+  .design-stack,
+  .developer-stack {
+    margin-bottom: 10px; 
   }
 
+  .developer-stack img {
+    width: 30%;
+  }
   .design-stack img {
-    max-height: 5rem;
+    width: 36%;
   }
 
-  .design-stack img {
-    max-height: 15rem;
+  .about-into img {
+    max-width: 100%; 
+    height: auto;
   }
+
+  h5 {
+    margin-bottom: 10px;
+  } */
 }
