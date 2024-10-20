@@ -8,20 +8,20 @@
 }
 
 .spaceman img {
-  width: 150px; /* Adjust size of spaceman */
+  width: 200px; /* Adjust size of spaceman */
   height: auto;
 }
 
-/* Animation to move the spaceman across the screen */
 @keyframes walk {
   0% {
-    left: -100px; /* Start off-screen */
+    transform: translateX(0);
   }
   100% {
-    left: 100vw; /* Move to the far right of the screen */
+    transform: translateX(100vw);
   }
 }
-/* spaceman code from chatgpt----------------------------------------------------- */
+
+/* Source: spaceman code from chatgpt----------------------------------------------------- */
 
 body {
   background-color: black;
@@ -703,6 +703,10 @@ h6 {
 
 /* THIS IS FOR MOBILE ABOUT */
 
+.container-about {
+  margin-left: 1rem;
+}
+
 .about-intro {
   display: flex;
   align-items: top;
@@ -731,16 +735,22 @@ h6 {
   margin: 1rem;
 }
 
-.contact {
-  margin-left: rem;
-}
-
 h6 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .contact {
   text-align: center;
+}
+
+.social-media {
+  /* display: flex; */
+  align-content: center;
+}
+
+.social-media img {
+  width: 40px;
+  height: auto;
 }
 
 /* TABLET ABOUT ----------------------------------------- */
@@ -771,6 +781,10 @@ h6 {
 
   .developer-stack img {
     max-height: 6rem;
+  }
+
+  .social-media img {
+    width: 5rem;
   }
 }
 
