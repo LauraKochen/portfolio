@@ -18,6 +18,7 @@
 
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
+  console.log(modalId);
   modal.style.display = "block";
 }
 

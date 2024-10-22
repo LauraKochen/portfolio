@@ -1,133 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="normalize-fwd.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="portfolio-slider.js"></script>
+    <link rel="stylesheet" href="styles copy.css" />
+         <!-- <script src="portfolio-slider.js"></script> -->
+         <script src="titles.js"></script>
+         <script src="spaceman.js"></script>
+
+
 
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
-      rel="stylesheet"
+      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/mif2gkw.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.cdnfonts.com/css/ramona" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
+
+
+
   </head>
 
+  
   <body>
-    <!-- loader -->
 
-    <div id="loading-screen">
-    <div class="typing-container">
-      <h1 id="typed-text"></h1>
+    <div class="spaceman">
+      <img src="images/spaceman.png" alt="Spaceman">
     </div>
-
     
+;
+    <canvas id="bgCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('bgCanvas');
+        const context = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    
+        let particlesArray = [];
+        let mouse = {
+            x: null,
+            y: null,
+            radius: 100 // Adjust this value for the distance at which particles react
+        };
+    
+        // Update mouse position
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+    
+        // Handle Resize
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles(); // Reinitialize particles on resize
+        });
+    
+        // Create Particle class
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+    
+            // Draw individual particle
+            draw() {
+                context.beginPath();
+                context.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                context.fillStyle = this.color;
+                context.fill();
+            }
+    
+            // Update particle position and apply mouse attraction
+            update() {
+            // Move particles within canvas bounds
+            if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                this.directionX = -this.directionX;
+            }
+            if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                this.directionY = -this.directionY;
+            }
 
-    <div id="main-content">
-      <main class="site">
-        <div class="wrapper">
-          <div class="wrapper-inner"></div>
+            // Check if particle is within mouse radius
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < mouse.radius) {
+                this.x += dx * 0.2; // Adjust this value to control how strongly particles follow the mouse
+                this.y += dy * 0.2;
+            }
+
+            this.x += this.directionX;
+            this.y += this.directionY;
+            this.draw();
+        }
+    }
+
+    // Initialize particles
+    function initParticles() {
+        particlesArray = [];
+        const numberOfParticles = (canvas.width * canvas.height) / 9000;
+        for (let i = 0; i < numberOfParticles; i++) {
+            let size = Math.random() * 5 + 1;
+            let x = Math.random() * (canvas.width - size * 2) + size;
+            let y = Math.random() * (canvas.height - size * 2) + size;
+            let directionX = (Math.random() * 0.4) - 0.2;
+            let directionY = (Math.random() * 0.4) - 0.2;
+            let color = 'rgba(255, 255, 255, 0.3)';
+
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    // Animate particles
+    function animate() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+        }
+        requestAnimationFrame(animate);
+    }
+
+    // Start animation
+    initParticles();
+    animate();
+</script>
+<style>
+    #bgCanvas {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+       
+        z-index: -1;
+    }
+</style>
+
+<!-- particles code from  chat GPT-------------------------->
+
+<div class="cursor"></div>
+
+<div class="typing-container">
+  <h1 id="typed-text"></h1>
+</div>
+    <main class="site">
+]
+      
+
+<!-- MOBILE NAV -->
+
+      <nav class="navbar">
+        <div class="navbar__item navbar__item--active">
+          <div class="navbar__item-content">
+            <a href="index.html">
+              <img src="images/home-icon.png" alt="Home Icon" class="home-icon">
+            </a>
+          </div>
         </div>
-        <div id="circle" class="circle"></div>
-
-        <!-- MOBILE NAV -->
-        <nav class="mobile-bottom-nav">
-          <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-            <div class="mobile-bottom-nav__item-content">
-              <a href="your-link-here">
-                <img
-                  src="images/home-icon.png"
-                  alt="Home Icon"
-                  class="home-icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="mobile-bottom-nav__item">
-            <div class="mobile-bottom-nav__item-content">
-              <a href="your-link-here">
-                <img
-                  src="images/portfolio.png"
-                  alt="Portfolio Icon"
-                  class="portfolio-icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="mobile-bottom-nav__item">
-            <div class="mobile-bottom-nav__item-content">
-              <a href="your-link-here">
-                <img
-                  src="images/about-me.png"
-                  alt="About Icon"
-                  class="about-icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="mobile-bottom-nav__item">
-            <div class="mobile-bottom-nav__item-content">
-              <a href="your-link-here">
-                <img
-                  src="images/contact.png"
-                  alt="Contact Me Icon"
-                  class="contact-icon"
-                />
-              </a>
-            </div>
-          </div>
-        </nav>
-
-        <div class="fullpage">
-          <section class="left">
-            <span class="firstname">Laura </span>
-            <span class="lastname"> Kochen</span>
-            <h2>UX Designer</h2>
-            <h4>
-              with a background <br />in Marketing and <br />Graphic Design.
-            </h4>
-            <p><em>Learn more about me here! >></em></p>
-          </section>
-
-          <div class="right">
-            <!-- PROJECTS CODE -->
-            <div class="projects">
-              <section class="project-one">
-                <div class="container">
-                  <img
-                    src="images/MovieDesktopHome.jpg"
-                    alt="movie project home image"
-                    class="image"
-                    style="width: 100%"
-                  />
-                  <div class="middle">
-                    <a href=""></a>
-                    <div class="text">click here</div>
-                  </div>
-                </div>
-              </section>
-              <section class="project-two">
-                <div class="container">
-                  <img
-                    src="images/game-screenshot.png"
-                    alt="game kray kray kittens"
-                    class="image"
-                    style="width: 100%"
-                  />
-                  <div class="middle">
-                    <a href=""></a>
-                    <div class="text">click here</div>
-                  </div>
-                </div>
-              </section>
-              <!-- Add more projects as needed -->
-            </div>
+        <div class="navbar__item">
+          <div class="navbar__item-content">
+            <a href="projects.html">
+              <img src="images/portfolio-icon.svg" alt="Portfolio Icon" class="portfolio-icon">
+            </a>
           </div>
         </div>
-      </main>
-    </div>
+        <div class="navbar__item">
+          <div class="navbar__item-content">
+            <a href="about.html">
+              <img src="images/about-me.png" alt="About Icon" class="about-icon">
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar__item">
+          <div class="navbar__item-content">
+            <a href="your-link-here">
+              <img src="images/contact.png" alt="Contact Me Icon" class="contact-icon">
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- DESKTOP NAV -->
+      <nav class="navbar-desktop">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      
+
+      <div id="output"></div>
+
+
+      <div class="fullpage-home">
+        <section class="left">
+
+            <div id="title-output"></div>
+            <section class="typing">
+                <h1>Laura <br>Kochen</h1>
+            </section>
+                <h2 class="UX">UX Designer</h2>
+                <!-- <h2 class="graphic-artist">Graphic Artist</h2> -->
+                <!-- <h2 class="creative-thinker">Creative Thinker</h2> -->
+      </div>
+
+      <div class="nebula"></div>
+
+     
+      </div>
+            
+        </section>
+
+      <!-- <div class="right"> -->
+
+
+
+      
+    </main>
   </body>
 </html>

@@ -1,14 +1,14 @@
 /* spaceman ---------------------------------------------------------------*/
 
 .spaceman {
-  position: fixed;
+  position: absolute;
+  animation: walk 5s linear;
   bottom: 50px;
-  left: -100px;
-  animation: walk 5s linear forwards;
+  left: -200px;
 }
 
 .spaceman img {
-  width: 200px; /* Adjust size of spaceman */
+  width: 200px;
   height: auto;
 }
 
@@ -17,7 +17,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateX(calc(100vw + 200px));
   }
 }
 
@@ -31,9 +31,24 @@ body {
   /* background-image: url(./images/space.png); */
   background-repeat: no-repeat;
   background-size: cover;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
+main {
+  max-width: 75rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "syne mono";
+  color: #fff;
+}
 .fullpage-home {
   height: 20vh;
   justify-content: center;
@@ -43,7 +58,6 @@ body {
 }
 
 @media (min-width: 43.75em) {
-  /* ---- */
 }
 
 .fullpage {
@@ -66,11 +80,10 @@ body {
   min-height: 100vh;
   background-image: url(./images/space.png);
 
-  /* BACKGROUND IMAGE MOVEMENT----------------------- */
-  background-position: 100% -50%; /* Start with the image at the bottom */
+  background-position: 100% -50%;
   background-size: cover;
-  opacity: 0; /* Initially invisible */
-  animation: slideUpFadeIn 2s ease-out forwards; /* Animation that handles slide-up and fade-in */
+  opacity: 0;
+  animation: slideUpFadeIn 2s ease-out forwards;
 }
 
 /* for the mountain movement */
@@ -108,6 +121,10 @@ h1 {
     color: white;
     text-shadow: 8px 6px 8px rgba(0, 0, 0, 0.6);
     margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }
 
@@ -158,6 +175,11 @@ h6 {
   font-size: 2rem;
   font-family: "karla";
   color: white;
+}
+
+h2 {
+  font-family: "syne mono";
+  font-size: 2rem;
 }
 
 /* TYPOGRAPHY END--------------------------- */
@@ -356,6 +378,7 @@ h6 {
   left: 0;
   z-index: -1;
 }
+/* ----------------------------------------------- */
 
 .button-container {
   display: none;
@@ -377,13 +400,25 @@ h6 {
   padding-right: 2rem;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 @media (min-width: 48em) {
   .project-mobile {
     display: none;
   }
+
   /* PROJECT MODAL FOR TABLET---------------------- */
   .project-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: "syne mono";
     color: #bfb3b4;
     margin-bottom: 2rem;
@@ -392,48 +427,6 @@ h6 {
     margin-left: 1rem;
   }
 
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-
-  /* Modal content */
-  .modal-content {
-    position: relative;
-    margin: 10% auto;
-    padding: 2rem;
-    width: 80%;
-    max-width: 55rem;
-    max-height: 60vh;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .image-container img {
-    width: auto;
-    max-width: 80%;
-    height: auto;
-  }
-
-  /* Close button */
   .close-button {
     position: absolute;
     top: 10px;
@@ -445,9 +438,9 @@ h6 {
   }
 
   .button-container {
-    position: fixed;
+    position: relative;
     width: 100%;
-    height: 100%;
+    min-height: 30rem;
     display: block;
   }
 
@@ -507,12 +500,11 @@ h6 {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 15px 25px rgba(0, 0, 0, 0.2),
       0 20px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    /* cursor: pointer; */
     box-shadow: 0 0 30px rgba(246, 243, 243, 0.4),
       0 0 60px rgba(254, 254, 254, 0.3), 0 0 90px rgba(95, 64, 146, 0.4),
       0 0 120px rgba(74, 155, 175, 0.3);
     position: absolute;
-    top: -5%;
+    top: 50%;
     left: 75%;
     justify-content: center;
     align-items: center;
@@ -541,7 +533,6 @@ h6 {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 15px 25px rgba(0, 0, 0, 0.2),
       0 20px 40px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    /* cursor: pointer; */
     box-shadow: 0 0 30px rgba(246, 243, 243, 0.4),
       0 0 60px rgba(254, 254, 254, 0.3), 0 0 90px rgba(95, 64, 146, 0.4),
       0 0 120px rgba(74, 155, 175, 0.3);
@@ -574,8 +565,8 @@ h6 {
       0 0 60px rgba(254, 254, 254, 0.3), 0 0 90px rgba(95, 64, 146, 0.4),
       0 0 120px rgba(74, 155, 175, 0.3);
     position: absolute;
-    top: 23%;
-    left: 20%;
+    top: 40%;
+    left: 30%;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -626,6 +617,98 @@ h6 {
     transform: translateY(3px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
   }
+}
+
+/* Modal content */
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  padding: 2rem;
+  width: 80%;
+  max-width: 55rem;
+  max-height: 60vh;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.image-container img {
+  width: auto;
+  max-width: 80%;
+  height: auto;
+}
+/* this changes mobile images sizes, not the sizes of desktop  */
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-button1:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px rgba(246, 243, 243, 0.4),
+    0 0 100px rgba(254, 254, 254, 0.3), 0 0 150px rgba(95, 64, 146, 0.4),
+    0 0 200px rgba(74, 155, 175, 0.3);
+  animation: shimmer 1s infinite alternate;
+}
+
+.modal-button2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px rgba(246, 243, 243, 0.4),
+    0 0 100px rgba(254, 254, 254, 0.3), 0 0 150px rgba(95, 64, 146, 0.4),
+    0 0 200px rgba(74, 155, 175, 0.3);
+  animation: shimmer 1s infinite alternate;
+}
+
+.modal-button3:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px rgba(246, 243, 243, 0.4),
+    0 0 100px rgba(254, 254, 254, 0.3), 0 0 150px rgba(95, 64, 146, 0.4),
+    0 0 200px rgba(74, 155, 175, 0.3);
+  animation: shimmer 0.7s infinite alternate;
+}
+
+.modal-button4:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 50px rgba(246, 243, 243, 0.4),
+    0 0 100px rgba(254, 254, 254, 0.3), 0 0 150px rgba(95, 64, 146, 0.4),
+    0 0 200px rgba(74, 155, 175, 0.3);
+  animation: shimmer 1s infinite alternate;
+}
+
+@keyframes shimmer {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.2);
+  }
+}
+
+.modal-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-text {
+  font-size: 1rem;
+  font-family: karla;
 }
 
 /* PROJECTS MODAL FOR DESKTOP-------------------/* Modal background */
@@ -694,9 +777,9 @@ h6 {
 
 /* Modal body for scrollable content */
 .modal-body {
-  max-height: 60vh; /* Limit the height of the content */
-  overflow-y: scroll; /* Make content scrollable */
-  padding-right: 10px; /* Add some space for scrollbar */
+  max-height: 60vh;
+  overflow-y: scroll;
+  padding-right: 10px;
 }
 
 /* ----------------------------------------------------- */
@@ -709,20 +792,30 @@ h6 {
 
 .about-intro {
   display: flex;
-  align-items: top;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 .about-intro img {
-  height: 6rem;
-  width: auto;
-  margin-right: 1rem;
-  margin-left: 1rem;
-  /* padding: none; */
+  width: 15rem;
+  height: auto;
+  object-fit: cover;
 }
 
+.stack h3 {
+  color: #fff;
+  font-size: 2rem;
+}
 .about-intro p {
   margin-left: 1;
   padding-right: 0.5rem;
+}
+
+.stack {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
 }
 
 .developer-stack img {
@@ -756,8 +849,16 @@ h6 {
 /* TABLET ABOUT ----------------------------------------- */
 
 @media (min-width: 48em) {
-  .about-intro img {
-    height: 12rem;
+  .about-intro {
+    flex-direction: row;
+  }
+
+  .stack {
+    flex-direction: row;
+  }
+  .design-stack,
+  .developer-stack {
+    width: 50%;
   }
   p {
     font-size: 2rem;

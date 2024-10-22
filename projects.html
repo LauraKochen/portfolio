@@ -5,9 +5,9 @@
 	  <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="normalize-fwd.css" />
     <link rel="stylesheet" href="styles copy.css" />
-         <script src="portfolio-slider.js" defer></script>
+
          <script src="portfolio-modal.js" defer></script>
-         <script src="mobile-projects.js" defer></script>
+         <!-- <script src="mobile-projects.js" defer></script> -->
 
 
     <link
@@ -176,7 +176,7 @@
       <nav class="navbar">
         <div class="navbar__item navbar__item--active">
           <div class="navbar__item-content">
-            <a href="index2.html">
+            <a href="index.html">
               <img src="images/home-icon.png" alt="Home Icon" class="home-icon">
             </a>
           </div>
@@ -190,7 +190,7 @@
         </div>
         <div class="navbar__item">
           <div class="navbar__item-content">
-            <a href="about2.html">
+            <a href="about.html">
               <img src="images/about-me.png" alt="About Icon" class="about-icon">
             </a>
           </div>
@@ -208,9 +208,9 @@
       <!-- DESKTOP NAV -->
       <nav class="navbar-desktop">
         <ul>
-        <li><a href="index2.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="about2.html">About</a></li>
+        <li><a href="about.html">About</a></li>
         <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
       </nav>
@@ -245,13 +245,13 @@
 
       <div class="modal" id="projectModal1">
         <div class="modal-content">
-          <span class="close-button" onclick="closeModal(projectModal1)">×</span>
+          <span class="close-button" onclick="closeModal('projectModal1')">×</span>
           <h2>XD Movie Database</h2>
-          <p>This movie database was created in Abobe XD, utilizing my comprehensive skills in graphic design. It was created off of a initial design I made in Photoshop, and later developed further in XD. It showcases a creative conceptionalization of a well-organized, user centric website database.</p>
+          <p class="project-text">This movie database was created in Abobe XD, utilizing my comprehensive skills in graphic design. It was created off of a initial design I made in Photoshop, and later developed further in XD. It showcases a creative conceptionalization of a well-organized, user centric website database.</p>
           <div class="image-container">
-          <img src="images/gladiator.png">
+          <img src="images/gladiator_sm.png">
           <p>Home Page</p>
-          <img src="images/Desktop Home.jpg" >
+          <img src="images/Gladiator-Desktop Home.jpg" >
           <p>Movie Feature Page</p>
           <img src="images/Desktop Feature.jpg" >
           <p>About Page</p>
@@ -265,37 +265,37 @@
 
   <div class="modal" id="projectModal2">
     <div class="modal-content">
-      <span class="close-button" onclick="closeModal(projectModal2)">×</span>
+      <span class="close-button" onclick="closeModal('projectModal2')">×</span>
       <h2>User Experience Design</h2>
-      <p>I bring a creative and analytical approach to user experience (UX) design. I have experience with information architecture, flowcharts, wireframes, and low and hi-fi mock-ups.</p>
+      <p class="project-text">I bring a creative and analytical approach to user experience (UX) design. I have experience with information architecture, flowcharts, wireframes, and low and hi-fi mock-ups.</p>
       <div class="image-container">
-      <img src="images/macbook-UX-ICBC.jpg">
-      <p><b>Information Architecture Expertise:</b> I specialize in designing well-organized and intuitive information structures, making it easy for users to navigate digital platforms seamlessly. My approach to information architecture involves strategic planning and careful organization, aligning content and functionality to enhance user engagement and overall satisfaction.</p>
+      <img src="images/macbook-UX_sm2.png">
+      <p class="project-text"><b>Information Architecture Expertise:</b> I specialize in designing well-organized and intuitive information structures, making it easy for users to navigate digital platforms seamlessly. My approach to information architecture involves strategic planning and careful organization, aligning content and functionality to enhance user engagement and overall satisfaction.</p>
       <img src="images/Site-map.jpg">
-      <p><b>Wireframe Expertise:</b> 
+      <p class="project-text"><b>Wireframe Expertise:</b> 
         My expertise in wireframing enables me to develop detailed visual prototypes that define interface layouts and core functionalities at an early stage in the design process. These wireframes act as essential blueprints for development teams and stakeholders, fostering collaborative discussions and ensuring that design objectives are met with precision and clarity.</p>
       <img src="images/wireframe.jpg">
-      <p><b>UX Report</b> I specialize in designing well-organized and intuitive information structures, making it easy for users to navigate digital platforms seamlessly. My approach to information architecture involves strategic planning and careful organization, aligning content and functionality to enhance user engagement and overall satisfaction.</p>
+      <p class="project-text"> <b>UX Report</b> I specialize in designing well-organized and intuitive information structures, making it easy for users to navigate digital platforms seamlessly. My approach to information architecture involves strategic planning and careful organization, aligning content and functionality to enhance user engagement and overall satisfaction.</p>
        </div>
     </div>
   </div>
 
   <div class="modal" id="projectModal3">
     <div class="modal-content">
-      <span class="close-button" onclick="closeModal(projectModal3)">×</span>
+      <span class="close-button" onclick="closeModal('projectModal3')">×</span>
       <h2>JavaScript Game</h2>
-      <p>This is a simple game created using JavaScript. It serves as a testiment to my technical proficency with fundamental web technologies.</p>
+      <p class="project-text">This is a simple game created using JavaScript. It serves as a testiment to my technical proficency with fundamental web technologies.</p>
       <div class="image-container">
-      <img src="images/javascript-game.png">
+      <img src="images/javascript-game_sm.png">
        </div>
     </div>
   </div>
 
   <div class="modal" id="projectModal4">
     <div class="modal-content">
-      <span class="close-button" onclick="closeModal(projectModal4)">×</span>
+      <span class="close-button" onclick="closeModal('projectModal4')">×</span>
       <h2>Style Guide</h2>
-      <p>Creating and managing style guides is one of my strengths as a designer, and it is a key aspect of ensuring brand consistency. I have a strong grasp of typography, color theory, and visual hierarchy, allowing me to build guides that are clear, cohesive, and adaptable across all platforms. My ability to define detailed guidelines for components, icons, and imagery ensures that designs maintain quality and alignment, even when scaled or applied by different teams. By leveraging my expertise in developing style guides, I help streamline workflows, enhance collaboration, and maintain a polished, professional brand identity.</p>
+      <p class="project-text">Creating and managing style guides is one of my strengths as a designer, and it is a key aspect of ensuring brand consistency. I have a strong grasp of typography, color theory, and visual hierarchy, allowing me to build guides that are clear, cohesive, and adaptable across all platforms. My ability to define detailed guidelines for components, icons, and imagery ensures that designs maintain quality and alignment, even when scaled or applied by different teams. By leveraging my expertise in developing style guides, I help streamline workflows, enhance collaboration, and maintain a polished, professional brand identity.</p>
       <div class="image-container">
       <img src="images/Laura Kochen Style Guide_Page_01.jpg">
       <img src="images/Laura Kochen Style Guide_Page_02.jpg">
@@ -316,94 +316,42 @@
     <!-- gladiator -->
     <section class="project-mobile">
       <p>XD Movie Database</p>
-      <div class="image-container-mobile" onclick="openModal()">
-        <img src="images/gladiator.png" alt="Image of movie project homepage" class="clickable-image">
+      <div class="image-container-mobile" onclick="openModal('projectModal1')">
+        <img src="images/gladiator_sm.png" alt="Image of movie project homepage" class="clickable-image">
       </div>
       
-      <div id="infoModal" class="modal-mobile">
-        <div class="modal-content-mobile">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <div class="modal-body">
-            <h2>More Information</h2>
-            <p>It was created off of a initial design I made in Photoshop, and later developed further in XD. It showcases a creative conceptionalization of a well-organized, user centric website database.</p>
-            <img src="images/gladiator.png" alt="Image of movie project homepage">
-            <img src="images/Desktop Home.jpg" alt="Image of movie project desktop home">
-            <img src="images/Desktop Feature.jpg" alt="Image of movie project features page">
-          </div>
-        </div>
-      </div>
 
     </section>
 
 <!-- style guide -->
     <section class="project-mobile">
       <p>Style Guide</p>
-      <div class="image-container-mobile" onclick="openModal()">
+      <div class="image-container-mobile" onclick="openModal('projectModal2')">
         <img src="images/macbook-style-guide.png" alt="Image of style guide" class="clickable-image">
       </div>
       
-      <div id="infoModal" class="modal-mobile">
-        <div class="modal-content-mobile">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <div class="modal-body">
-            <h2>More Information</h2>
-            <p>Creating and managing style guides is one of my strengths as a designer, and it is a key aspect of ensuring brand consistency. I have a strong grasp of typography, color theory, and visual hierarchy. My ability to define detailed guidelines for components, icons, and imagery ensures that designs maintain quality and alignment, even when scaled or applied by different teams. By leveraging my expertise in developing style guides, I help streamline workflows, enhance collaboration, and maintain a polished, professional brand identity.</p>
-            <img src="images/Laura Kochen Style Guide_Page_01.jpg" alt="cover page of style guide">
-            <img src="images/Laura Kochen Style Guide_Page_02.jpg"alt="page 2 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_03.jpg"alt="page 3 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_04.jpg"alt="page 4 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_05.jpg"alt="page 5 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_06.jpg"alt="page 6 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_07.jpg"alt="page 7 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_08.jpg"alt="page 8 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_09.jpg"alt="page 9 of style guide">
-      <img src="images/Laura Kochen Style Guide_Page_10.jpg"alt="page 10 of style guide">
-            
-          </div>
-        </div>
-      </div>
-
+      
     </section>
 
     <!-- javascript game -->
     <section class="project-mobile">
       <p>JavaScript Game</p>
-      <div class="image-container-mobile" onclick="openModal()">
-        <img src="images/javascript-game.png" alt="Image of javascript game" class="clickable-image">
+      <div class="image-container-mobile" onclick="openModal('projectModal3')">
+        <img src="images/javascript-game_sm.png" alt="Image of javascript game" class="clickable-image">
       </div>
       
-      <div id="infoModal" class="modal-mobile">
-        <div class="modal-content-mobile">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <div class="modal-body">
-            <h2>More Information</h2>
-            <p>This is a simple game created using JavaScript. It serves as a testiment to my technical proficency with fundamental web technologies.</p>
-            <img src="images/javascript-game.png" alt="image of Kray Kray Kitties Game">
-          
-          </div>
-        </div>
-      </div>
+      
 
     </section>
 
     <!-- UX Design Project -->
     <section class="project-mobile">
-      <p>Style Guide</p>
-      <div class="image-container-mobile" onclick="openModal()">
-        <img src="images/macbook-UX.png" alt="Image of style guide" class="clickable-image">
+      <p>UX Design</p>
+      <div class="image-container-mobile" onclick="openModal('projectModal4')">
+        <img src="images/macbook-UX_sm2.png" alt="Image of style guide" class="clickable-image">
       </div>
       
-      <div id="infoModal" class="modal-mobile">
-        <div class="modal-content-mobile">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <div class="modal-body">
-            <h2>More Information</h2>
-            <p>I bring a creative and analytical approach to user experience (UX) design. I have experience with information architecture, flowcharts, wireframes, and low and hi-fi mock-ups..</p>
-            <img src="images/Site-map" alt="UX site map">
-            <img src="images/wireframe.jpg" alt="UX wireframe">
-          </div>
-        </div>
-      </div>
+      
 
     </section>
       

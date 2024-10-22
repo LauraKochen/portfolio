@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="normalize-fwd.css" />
+    <link rel="stylesheet" href="styles copy.css" />
+    <!-- <script src="portfolio-slider.js" defer></script> -->
+    <script src="portfolio-modal.js" defer></script>
+    <script src="mobile-projects.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap"
+      rel="stylesheet"
+    />
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/mif2gkw.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.cdnfonts.com/css/ramona" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    style="
+      background-image: url(images/space_crop.png);
+      background-size: cover;
+      background-position: bottom;
+      background-attachment: fixed;
+    "
+  >
+    <!-- <body class="small-mountains "> -->
+
+    <!-- PARTICLES CODE -->
+    <canvas id="bgCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById("bgCanvas");
+      const context = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particlesArray = [];
+      let mouse = {
+        x: null,
+        y: null,
+        radius: 100, // Adjust this value for the distance at which particles react
+      };
+
+      // Update mouse position
+      window.addEventListener("mousemove", function (event) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+      });
+
+      // Handle Resize
+      window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles(); // Reinitialize particles on resize
+      });
+
+      // Create Particle class
+      class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+          this.x = x;
+          this.y = y;
+          this.directionX = directionX;
+          this.directionY = directionY;
+          this.size = size;
+          this.color = color;
+        }
+
+        // Draw individual particle
+        draw() {
+          context.beginPath();
+          context.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+          context.fillStyle = this.color;
+          context.fill();
+        }
+
+        // Update particle position and apply mouse attraction
+        update() {
+          // Move particles within canvas bounds
+          if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+            this.directionX = -this.directionX;
+          }
+          if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+            this.directionY = -this.directionY;
+          }
+
+          // Check if particle is within mouse radius
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < mouse.radius) {
+            this.x += dx * 0.2; // Adjust this value to control how strongly particles follow the mouse
+            this.y += dy * 0.2;
+          }
+
+          this.x += this.directionX;
+          this.y += this.directionY;
+          this.draw();
+        }
+      }
+
+      // Initialize particles
+      function initParticles() {
+        particlesArray = [];
+        const numberOfParticles = (canvas.width * canvas.height) / 9000;
+        for (let i = 0; i < numberOfParticles; i++) {
+          let size = Math.random() * 5 + 1;
+          let x = Math.random() * (canvas.width - size * 2) + size;
+          let y = Math.random() * (canvas.height - size * 2) + size;
+          let directionX = Math.random() * 0.4 - 0.2;
+          let directionY = Math.random() * 0.4 - 0.2;
+          let color = "rgba(255, 255, 255, 0.3)";
+
+          particlesArray.push(
+            new Particle(x, y, directionX, directionY, size, color)
+          );
+        }
+      }
+
+      // Animate particles
+      function animate() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particlesArray.length; i++) {
+          particlesArray[i].update();
+        }
+        requestAnimationFrame(animate);
+      }
+
+      // Start animation
+      initParticles();
+      animate();
+    </script>
+    <style>
+      #bgCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      }
+    </style>
+
+    <!-- <div class="cursor"></div> -->
+
+    <main class="site">
+      <!-- MOBILE NAV -->
+
+      <nav class="navbar">
+        <div class="navbar__item navbar__item--active">
+          <div class="navbar__item-content">
+            <a href="index.html">
+              <img
+                src="images/home-icon.png"
+                alt="Home Icon"
+                class="home-icon"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="navbar__item">
+          <div class="navbar__item-content">
+            <a href="projects.html">
+              <img
+                src="images/portfolio-icon.svg"
+                alt="Portfolio Icon"
+                class="portfolio-icon"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="navbar__item">
+          <div class="navbar__item-content">
+            <a href="about.html">
+              <img
+                src="images/about-me.png"
+                alt="About Icon"
+                class="about-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- DESKTOP NAV -->
+      <nav class="navbar-desktop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+      </nav>
+
+      <!-- <div id="output"></div>
+
+
+      <div class="fullpage">
+
+      </div> -->
+
+      <!-- </section> -->
+
+      <section>
+        <div class="project-title">
+          <h2>A Space to Learn About Me</h2>
+        </div>
+
+        <!-- <div class="container-about"> -->
+        <div class="container-about">
+          <div class="about-intro">
+            <img src="images/headshot.jpg" alt="Logo" />
+            <p>
+              Design has always been present in my life: from making out of this
+              world pottery mugs to growing dahlias in the summer. My creative
+              journey has inspired me to designing intuitive, user-centric
+              experiences that combine artistry with functionality. In
+              everything I do, I make space for creativity.
+            </p>
+          </div>
+
+          <div class="stack">
+            <section class="design-stack">
+              <h3>Design Stack</h3>
+              <img src="images/design-logos.png" alt="design program logos" />
+            </section>
+
+            <section class="developer-stack">
+              <h3>Developer Stack</h3>
+              <img src="images/logos.png" alt="logos of developer programs" />
+            </section>
+          </div>
+        </div>
+      </section>
+      <!-- </section> -->
+
+      <section class="contact">
+        <h5>Contact Me</h5>
+        <h6>Laura Kochen <br />laurakochen.com</h6>
+        <div class="social-media">
+          <a href="https://github.com/LauraKochen"
+            >;
+            <img src="images/Github-Logo.png" alt="logo for Github" />
+          </a>
+          <a href="https://www.linkedin.com/in/laurakochen"
+            >;
+            <img src="images/linkedIn logo.png" alt="linkedin logo" />
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

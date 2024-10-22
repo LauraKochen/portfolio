@@ -1,10 +1,10 @@
 // Open the Modal
-function openModal() {
+function openModal_sm() {
   document.getElementById("infoModal").style.display = "block";
 }
 
 // Close the Modal
-function closeModal() {
+function closeModal_sm() {
   document.getElementById("infoModal").style.display = "none";
 }
 
