@@ -301,7 +301,7 @@ h2 {
 
   .navbar-desktop {
     font-family: "Karla", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font: bold;
     font-weight: 200;
     text-decoration: none;
@@ -332,11 +332,13 @@ h2 {
     color: white;
     text-decoration: none;
     padding: 2rem;
+    font-weight: bold;
   }
 
   .navbar-desktop a:hover {
-    color: rgb(177, 128, 223);
+    color: #4a9baf;
     font-size: 1.5rem;
+    font-weight: bold;
   }
 }
 
@@ -883,51 +885,35 @@ h6 {
   .developer-stack img {
     max-height: 6rem;
   }
-
-  .social-media img {
-    width: 5rem;
-  }
 }
 
-/* DESKTOP ABOUT----------------------------------------------- */
+/* CONTACT PAGE--------------------- */
+
+.social-media img {
+  height: 5rem;
+  width: auto;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 @media (min-width: 43.75em) {
-  /* .container-about {
-    display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; 
-    padding: 20px;
+  .social-media a:hover img {
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.8));
+    transform: translateY(-5px);
   }
 
-  .about-intro {
-    flex: 1; 
-    max-width: 40%; 
+  .social-media a img {
+    transition: filter 0.3s ease;
   }
 
-  .stack {
-    flex: 1; 
-    max-width: 40%; 
-    display: flex;
-    flex-direction: column; 
+  .social-media img {
+    margin: 4rem;
+    height: 50%;
   }
-
-  .design-stack,
-  .developer-stack {
-    margin-bottom: 10px; 
-  }
-
-  .developer-stack img {
-    width: 30%;
-  }
-  .design-stack img {
-    width: 36%;
-  }
-
-  .about-into img {
-    max-width: 100%; 
-    height: auto;
-  }
-
-  h5 {
-    margin-bottom: 10px;
-  } */
 }
