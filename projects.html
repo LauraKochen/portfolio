@@ -165,56 +165,67 @@
 </style>
 
 <!-- <div class="cursor"></div> -->
+<header>
+  <nav class="navbar">
+    <div class="navbar__item navbar__item--active">
+      <div class="navbar__item-content">
+        <a href="index.html">
+          <img
+            src="images/home-icon.png"
+            alt="Home Icon"
+            class="home-icon"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="navbar__item">
+      <div class="navbar__item-content">
+        <a href="projects.html">
+          <img
+            src="images/portfolio-icon.svg"
+            alt="Portfolio Icon"
+            class="portfolio-icon"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="navbar__item">
+      <div class="navbar__item-content">
+        <a href="about.html">
+          <img
+            src="images/about-me.png"
+            alt="About Icon"
+            class="about-icon"
+          />
+        </a>
+      </div>
+    </div>
 
+    <div class="navbar__item">
+      <div class="navbar__item-content">
+        <a href="contact.html">
+          <img
+            src="images/contact.png"
+            alt="Contact Me Icon"
+            class="contact-icon"
+          />
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- DESKTOP NAV -->
+  <nav class="navbar-desktop">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main class="site">
-
-      
-
-<!-- MOBILE NAV -->
-
-      <nav class="navbar">
-        <div class="navbar__item navbar__item--active">
-          <div class="navbar__item-content">
-            <a href="index.html">
-              <img src="images/home-icon.png" alt="Home Icon" class="home-icon">
-            </a>
-          </div>
-        </div>
-        <div class="navbar__item">
-          <div class="navbar__item-content">
-            <a href="projects.html">
-              <img src="images/portfolio-icon.svg" alt="Portfolio Icon" class="portfolio-icon">
-            </a>
-          </div>
-        </div>
-        <div class="navbar__item">
-          <div class="navbar__item-content">
-            <a href="about.html">
-              <img src="images/about-me.png" alt="About Icon" class="about-icon">
-            </a>
-          </div>
-        </div>
-
-        <div class="navbar__item">
-          <div class="navbar__item-content">
-            <a href="contact.html">
-              <img src="images/contact.png" alt="Contact Me Icon" class="contact-icon">
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      <!-- DESKTOP NAV -->
-      <nav class="navbar-desktop">
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
       
 
       <div id="output"></div>
@@ -249,13 +260,13 @@
           <h2>XD Movie Database</h2>
           <p class="project-text">This movie database was created in Abobe XD, utilizing my comprehensive skills in graphic design. It was created off of a initial design I made in Photoshop, and later developed further in XD. It showcases a creative conceptionalization of a well-organized, user centric website database.</p>
           <div class="image-container">
-          <img src="images/gladiator_sm.png">
+          <img src="images/gladiator_sm.png" alt="mock-up of gladiator movie on a macbook">
           <p>Home Page</p>
-          <img src="images/Gladiator-Desktop Home.jpg" >
+          <img src="images/Gladiator-Desktop Home.jpg" alt="image of the entire Gladiator project homepage">
           <p>Movie Feature Page</p>
-          <img src="images/Desktop Feature.jpg" >
+          <img src="images/Desktop Feature.jpg" alt="image of the desktop page of the gladiator project">
           <p>About Page</p>
-          <img src="images/Desktop About.jpg" >
+          <img src="images/Desktop About.jpg" alt="image of the about page of the gladiator project" >
         </div>
         </div>
       </div>
@@ -267,12 +278,12 @@
       <h2>User Experience Design</h2>
       <p class="project-text">I bring a creative and analytical approach to user experience (UX) design. I have experience with information architecture, flowcharts, wireframes, and low and hi-fi mock-ups.</p>
       <div class="image-container">
-      <img src="images/macbook-UX_sm2.png">
+      <img src="images/macbook-UX_sm2.png" alt="mock up of the UX ICBC project on a macbook">
       <p class="project-text"><b>Information Architecture Expertise:</b> I specialize in designing well-organized and intuitive information structures, making it easy for users to navigate digital platforms seamlessly. My approach to information architecture involves strategic planning and careful organization, aligning content and functionality to enhance user engagement and overall satisfaction.</p>
-      <img src="images/Site-map.jpg">
+      <img src="images/Site-map.jpg" alt="site map image">
       <p class="project-text"><b>Wireframe Expertise:</b> 
         My expertise in wireframing enables me to develop detailed visual prototypes that define interface layouts and core functionalities at an early stage in the design process. These wireframes act as essential blueprints for development teams and stakeholders, fostering collaborative discussions and ensuring that design objectives are met with precision and clarity.</p>
-      <img src="images/wireframe.jpg">
+      <img src="images/wireframe.jpg" alt="wireframe for ux report">
       <p class="project-text"> <b>UX Report</b> I specialize in designing well-organized and intuitive information structures, making it easy for users to navigate digital platforms seamlessly. My approach to information architecture involves strategic planning and careful organization, aligning content and functionality to enhance user engagement and overall satisfaction.</p>
        </div>
     </div>
@@ -284,7 +295,7 @@
       <h2>JavaScript Game</h2>
       <p class="project-text">This is a simple game created using JavaScript. It serves as a testiment to my technical proficency with fundamental web technologies.</p>
       <div class="image-container">
-      <img src="images/javascript-game_sm.png">
+      <img src="images/javascript-game_sm.png" alt="image of the homepage of my javascript game">
        </div>
     </div>
   </div>
@@ -324,7 +335,7 @@
 <!-- style guide -->
     <section class="project-mobile">
       <p>Style Guide</p>
-      <div class="image-container-mobile" onclick="openModal('projectModal2')">
+      <div class="image-container-mobile" onclick="openModal('projectModal4')">
         <img src="images/macbook-style-guide.png" alt="Image of style guide" class="clickable-image">
       </div>
       
@@ -344,8 +355,8 @@
 
     <!-- UX Design Project -->
     <section class="project-mobile">
-      <p>UX Design</p>
-      <div class="image-container-mobile" onclick="openModal('projectModal4')">
+      <p></p>
+      <div class="image-container-mobile" onclick="openModal('projectModal2')">
         <img src="images/macbook-UX_sm2.png" alt="Image of style guide" class="clickable-image">
       </div>
       
@@ -357,4 +368,4 @@
   </body>
 </html>
 
-
+<!-- make modal bigger? Add style to the modal so they fit in with the look. Fix titles in the modals - text colour wrong?  -->

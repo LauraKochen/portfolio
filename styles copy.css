@@ -31,7 +31,15 @@ body {
   /* background-image: url(./images/space.png); */
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.homepage {
   overflow: hidden;
+}
+@media (min-width: 43.75em) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
 main {
@@ -295,15 +303,18 @@ h2 {
 }
 
 @media (min-width: 43.75em) {
+  header {
+    height: 3.125rem;
+  }
   .navbar {
     display: none;
   }
 
   .navbar-desktop {
     font-family: "Karla", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font: bold;
-    font-weight: 200;
+    font-weight: 100;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -313,7 +324,7 @@ h2 {
     color: white;
     z-index: 1000;
     width: 90%;
-    padding: 1rem;
+    padding: 0.8rem;
   }
 
   .navbar-desktop ul {
@@ -331,7 +342,7 @@ h2 {
   .navbar-desktop a {
     color: white;
     text-decoration: none;
-    padding: 2rem;
+    padding: 1.5rem;
     font-weight: bold;
   }
 
@@ -506,7 +517,7 @@ h2 {
       0 0 60px rgba(254, 254, 254, 0.3), 0 0 90px rgba(95, 64, 146, 0.4),
       0 0 120px rgba(74, 155, 175, 0.3);
     position: absolute;
-    top: 50%;
+    top: 15%;
     left: 75%;
     justify-content: center;
     align-items: center;
@@ -636,6 +647,12 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
+}
+
+.modal-content h2 {
+  color: black;
+  size: 1rem;
 }
 
 .image-container {
@@ -650,6 +667,7 @@ h2 {
   max-width: 80%;
   height: auto;
 }
+
 /* this changes mobile images sizes, not the sizes of desktop  */
 
 .close-button {
@@ -821,12 +839,12 @@ h2 {
 }
 
 .developer-stack img {
-  max-height: 5rem;
+  max-height: 3.7rem;
   margin: 1rem;
 }
 
 .design-stack img {
-  max-height: 5rem;
+  max-height: 4rem;
   margin: 1rem;
 }
 
@@ -848,6 +866,17 @@ h6 {
   height: auto;
 }
 
+.about-title {
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1;
+  font-family: "syne mono";
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
 /* TABLET ABOUT ----------------------------------------- */
 
 @media (min-width: 48em) {
@@ -863,19 +892,10 @@ h6 {
     width: 50%;
   }
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-top: none;
     margin-left: 2rem;
     margin-right: 1rem;
-  }
-
-  h5 {
-    font-size: 3rem;
-  }
-
-  h2 {
-    /* line-height: 2.5rem; */
-    font-size: 3rem;
   }
 
   .design-stack img {
@@ -894,12 +914,21 @@ h6 {
   width: auto;
 }
 
+#contact-h1 {
+  font-size: 32px;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin: 1rem;
+}
+
+.contact h1 {
+  font-family: "syne mono";
+  font-size: 3rem;
 }
 
 @media (min-width: 43.75em) {
