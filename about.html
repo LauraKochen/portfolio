@@ -60,7 +60,6 @@
       background-attachment: fixed;
     "
   >
-    <!-- <body class="small-mountains "> -->
 
     <!-- PARTICLES CODE -->
     <canvas id="bgCanvas"></canvas>
@@ -74,23 +73,20 @@
       let mouse = {
         x: null,
         y: null,
-        radius: 100, // Adjust this value for the distance at which particles react
+        radius: 100, 
       };
 
-      // Update mouse position
       window.addEventListener("mousemove", function (event) {
         mouse.x = event.x;
         mouse.y = event.y;
       });
 
-      // Handle Resize
       window.addEventListener("resize", function () {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        initParticles(); // Reinitialize particles on resize
+        initParticles(); 
       });
 
-      // Create Particle class
       class Particle {
         constructor(x, y, directionX, directionY, size, color) {
           this.x = x;
@@ -101,7 +97,7 @@
           this.color = color;
         }
 
-        // Draw individual particle
+        
         draw() {
           context.beginPath();
           context.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
@@ -109,9 +105,8 @@
           context.fill();
         }
 
-        // Update particle position and apply mouse attraction
+       
         update() {
-          // Move particles within canvas bounds
           if (this.x + this.size > canvas.width || this.x - this.size < 0) {
             this.directionX = -this.directionX;
           }
@@ -119,13 +114,13 @@
             this.directionY = -this.directionY;
           }
 
-          // Check if particle is within mouse radius
+         
           let dx = mouse.x - this.x;
           let dy = mouse.y - this.y;
           let distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < mouse.radius) {
-            this.x += dx * 0.2; // Adjust this value to control how strongly particles follow the mouse
+            this.x += dx * 0.2; 
             this.y += dy * 0.2;
           }
 
@@ -135,7 +130,7 @@
         }
       }
 
-      // Initialize particles
+      
       function initParticles() {
         particlesArray = [];
         const numberOfParticles = (canvas.width * canvas.height) / 9000;
@@ -153,7 +148,7 @@
         }
       }
 
-      // Animate particles
+     
       function animate() {
         context.clearRect(0, 0, canvas.width, canvas.height);
         for (let i = 0; i < particlesArray.length; i++) {
@@ -162,7 +157,7 @@
         requestAnimationFrame(animate);
       }
 
-      // Start animation
+     
       initParticles();
       animate();
     </script>
@@ -177,12 +172,12 @@
       }
     </style>
 
-    <!-- <div class="cursor"></div> -->
+   
     <header>
       <nav class="navbar">
-        <div class="navbar__item navbar__item--active">
+        <div class="navbar__item navbar__item--active" aria-label="Main Navigation">
           <div class="navbar__item-content">
-            <a href="index.html">
+            <a href="index.html" aria-label="=Home">
               <img
                 src="images/home-icon.png"
                 alt="Home Icon"
@@ -193,7 +188,7 @@
         </div>
         <div class="navbar__item">
           <div class="navbar__item-content">
-            <a href="projects.html">
+            <a href="projects.html" aria-label="View Projects">
               <img
                 src="images/portfolio-icon.svg"
                 alt="Portfolio Icon"
@@ -204,7 +199,7 @@
         </div>
         <div class="navbar__item">
           <div class="navbar__item-content">
-            <a href="about.html">
+            <a href="about.html"aria-label="About Me">
               <img
                 src="images/about-me.png"
                 alt="About Icon"
@@ -213,10 +208,10 @@
             </a>
           </div>
         </div>
-
+    
         <div class="navbar__item">
           <div class="navbar__item-content">
-            <a href="contact.html">
+            <a href="contact.html" aria-label="Contact"></a>>
               <img
                 src="images/contact.png"
                 alt="Contact Me Icon"

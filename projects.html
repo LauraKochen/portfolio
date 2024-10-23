@@ -5,10 +5,7 @@
 	  <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="normalize-fwd.css" />
     <link rel="stylesheet" href="styles copy.css" />
-
          <script src="portfolio-modal.js" defer></script>
-         <!-- <script src="mobile-projects.js" defer></script> -->
-
 
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
@@ -36,18 +33,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
 
-
-
-
-
-
-
   </head>
 
   
   <body style ="background-image: url(images/space_crop.png); background-size: cover; background-position: bottom; background-attachment: fixed;">
-
-    <!-- <body class="small-mountains "> -->
     
 
 
@@ -63,23 +52,23 @@
         let mouse = {
             x: null,
             y: null,
-            radius: 100 // Adjust this value for the distance at which particles react
+            radius: 100 
         };
     
-        // Update mouse position
+       
         window.addEventListener('mousemove', function(event) {
             mouse.x = event.x;
             mouse.y = event.y;
         });
     
-        // Handle Resize
+       
         window.addEventListener('resize', function() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            initParticles(); // Reinitialize particles on resize
+            initParticles(); 
         });
     
-        // Create Particle class
+      
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
                 this.x = x;
@@ -90,7 +79,7 @@
                 this.color = color;
             }
     
-            // Draw individual particle
+            
             draw() {
                 context.beginPath();
                 context.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
@@ -98,9 +87,9 @@
                 context.fill();
             }
     
-            // Update particle position and apply mouse attraction
+            
             update() {
-            // Move particles within canvas bounds
+            
             if (this.x + this.size > canvas.width || this.x - this.size < 0) {
                 this.directionX = -this.directionX;
             }
@@ -108,13 +97,13 @@
                 this.directionY = -this.directionY;
             }
 
-            // Check if particle is within mouse radius
+            
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < mouse.radius) {
-                this.x += dx * 0.2; // Adjust this value to control how strongly particles follow the mouse
+                this.x += dx * 0.2; 
                 this.y += dy * 0.2;
             }
 
@@ -124,7 +113,7 @@
         }
     }
 
-    // Initialize particles
+    
     function initParticles() {
         particlesArray = [];
         const numberOfParticles = (canvas.width * canvas.height) / 9000;
@@ -140,7 +129,7 @@
         }
     }
 
-    // Animate particles
+   
     function animate() {
         context.clearRect(0, 0, canvas.width, canvas.height);
         for (let i = 0; i < particlesArray.length; i++) {
@@ -149,7 +138,7 @@
         requestAnimationFrame(animate);
     }
 
-    // Start animation
+    
     initParticles();
     animate();
 </script>
@@ -164,12 +153,12 @@
     }
 </style>
 
-<!-- <div class="cursor"></div> -->
+
 <header>
   <nav class="navbar">
-    <div class="navbar__item navbar__item--active">
+    <div class="navbar__item navbar__item--active" aria-label="Main Navigation">
       <div class="navbar__item-content">
-        <a href="index.html">
+        <a href="index.html" aria-label="=Home">
           <img
             src="images/home-icon.png"
             alt="Home Icon"
@@ -180,7 +169,7 @@
     </div>
     <div class="navbar__item">
       <div class="navbar__item-content">
-        <a href="projects.html">
+        <a href="projects.html" aria-label="View Projects">
           <img
             src="images/portfolio-icon.svg"
             alt="Portfolio Icon"
@@ -191,7 +180,7 @@
     </div>
     <div class="navbar__item">
       <div class="navbar__item-content">
-        <a href="about.html">
+        <a href="about.html"aria-label="About Me">
           <img
             src="images/about-me.png"
             alt="About Icon"
@@ -203,7 +192,7 @@
 
     <div class="navbar__item">
       <div class="navbar__item-content">
-        <a href="contact.html">
+        <a href="contact.html" aria-label="Contact"></a>>
           <img
             src="images/contact.png"
             alt="Contact Me Icon"
@@ -237,19 +226,18 @@
             
         </section>
 
-        <section class = "project-title">
+        <section class = "project-title" aria-labelledby="featured-projects">
           <h2>Featured Projects</h2>
         </section>
 
       <!-- PROJECTS CODE DESKTOP & TABLET-->
          
       <div class="button-container">
-
-        <button onclick="openModal('projectModal1')" class="modal-button1">XD Movie Database</button>
-        <button onclick="openModal('projectModal2')" class="modal-button2">UX Design Study</button>
-        <button onclick="openModal('projectModal3')" class="modal-button3">JavaScript Game</button>
-        <button onclick="openModal('projectModal4')" class="modal-button4">Style Guide</button>
-      </div>
+        <button onclick="openModal('projectModal1')" class="modal-button1" aria-haspopup="dialog" aria-controls="projectModal1" aria-expanded="false">XD Movie Database</button>
+        <button onclick="openModal('projectModal2')" class="modal-button2" aria-haspopup="dialog" aria-controls="projectModal2" aria-expanded="false">UX Design Study</button>
+        <button onclick="openModal('projectModal3')" class="modal-button3" aria-haspopup="dialog" aria-controls="projectModal3" aria-expanded="false">JavaScript Game</button>
+        <button onclick="openModal('projectModal4')" class="modal-button4" aria-haspopup="dialog" aria-controls="projectModal4" aria-expanded="false">Style Guide</button>
+    </div>
 
 
 
@@ -323,9 +311,9 @@
     <!-- MOBILE  PROJECTS--------------------------- -->
 
     <!-- gladiator -->
-    <section class="project-mobile">
+    <section class="project-mobile" aria-labelledby="mobile-projects">
       <p>XD Movie Database</p>
-      <div class="image-container-mobile" onclick="openModal('projectModal1')">
+      <div class="image-container-mobile" onclick="openModal('projectModal1')" aria-label="Open XD Movie Database modal">
         <img src="images/gladiator_sm.png" alt="Image of movie project homepage" class="clickable-image">
       </div>
       
@@ -333,9 +321,9 @@
     </section>
 
 <!-- style guide -->
-    <section class="project-mobile">
+    <section class="project-mobile" aria-labelledby="mobile-projects">
       <p>Style Guide</p>
-      <div class="image-container-mobile" onclick="openModal('projectModal4')">
+      <div class="image-container-mobile" onclick="openModal('projectModal4')"aria-label="Open XD Movie Database modal">
         <img src="images/macbook-style-guide.png" alt="Image of style guide" class="clickable-image">
       </div>
       
@@ -343,9 +331,9 @@
     </section>
 
     <!-- javascript game -->
-    <section class="project-mobile">
+    <section class="project-mobile" aria-labelledby="mobile-projects">
       <p>JavaScript Game</p>
-      <div class="image-container-mobile" onclick="openModal('projectModal3')">
+      <div class="image-container-mobile" onclick="openModal('projectModal3')"aria-label="Open XD Movie Database modal">
         <img src="images/javascript-game_sm.png" alt="Image of javascript game" class="clickable-image">
       </div>
       
@@ -354,13 +342,11 @@
     </section>
 
     <!-- UX Design Project -->
-    <section class="project-mobile">
+    <section class="project-mobile" aria-labelledby="mobile-projects">
       <p></p>
-      <div class="image-container-mobile" onclick="openModal('projectModal2')">
+      <div class="image-container-mobile" onclick="openModal('projectModal2')"aria-label="Open XD Movie Database modal">
         <img src="images/macbook-UX_sm2.png" alt="Image of style guide" class="clickable-image">
       </div>
-      
-      
 
     </section>
       
@@ -368,4 +354,4 @@
   </body>
 </html>
 
-<!-- make modal bigger? Add style to the modal so they fit in with the look. Fix titles in the modals - text colour wrong?  -->
+
